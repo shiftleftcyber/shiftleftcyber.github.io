@@ -1,0 +1,19 @@
+[
+  {
+    "title": "EO 14028",
+    "description": "All the bare necessities are there.",
+    "icon": "icon-desktop_windows",
+    "link": "blog/markdown-syntax/"
+  },
+  {
+    "title": "EU Cyber Resilience Act (CRA)",
+    "description": "Light weight and fast loading speed.",
+    "icon": "blog/markdown-syntax/"
+  },
+  {
+    "title": "CI/CD Support",
+    "description": "Please fork the Github repository and contribute to this theme!",
+    "icon": "icon-folder",
+    "link": "https://github.com/shiftleftcyber"
+  }
+]

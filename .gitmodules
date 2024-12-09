@@ -1,0 +1,6 @@
+[submodule "quickstart/themes/ananke"]
+	path = quickstart/themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
+[submodule "quickstart/themes/tella"]
+	path = quickstart/themes/tella
+	url = https://github.com/opera7133/tella.git
