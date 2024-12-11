@@ -58,9 +58,9 @@ enableRobotsTXT = true
     weight = 1
 
   [[menu.main]]
-   identifier = "servies"
+   identifier = "services"
    name = "Services"
-   url = "/services/"
+   url = "/about/"
    weight = 2
 
   [[menu.main]]
@@ -78,7 +78,7 @@ enableRobotsTXT = true
   [[menu.main]]
     identifier = "contact"
     name = "Contact"
-    url = "/contact/"
+    url = "/contactOld/"
     weight = 5
 
   # Footer Menu

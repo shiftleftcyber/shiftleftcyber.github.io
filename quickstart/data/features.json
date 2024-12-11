@@ -1,18 +1,18 @@
 [
   {
-    "title": "EO 14028",
-    "description": "All the bare necessities are there.",
+    "title": "Streamline Compliance",
+    "description": "EO 14028 & EU CRA",
     "icon": "icon-desktop_windows",
     "link": "blog/markdown-syntax/"
   },
   {
-    "title": "EU Cyber Resilience Act (CRA)",
-    "description": "Light weight and fast loading speed.",
-    "icon": "blog/markdown-syntax/"
+    "title": "Understand & Secure Your Supply Chain",
+    "description": "Know what your shipping",
+    "icon": "icon-desktop_windows"
   },
   {
-    "title": "CI/CD Support",
-    "description": "Please fork the Github repository and contribute to this theme!",
+    "title": "Seamless Integration",
+    "description": "With your existing GitHub, GitLab, Bitbicket & Azure Pipelines",
     "icon": "icon-folder",
     "link": "https://github.com/shiftleftcyber"
   }

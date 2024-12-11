@@ -6,49 +6,63 @@
     <description>Recent content on ShiftLeftCyber</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Jun 2020 12:33:45 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Dec 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Example Projectrrr</title>
-      <link>http://localhost:1313/products/example/</link>
+      <title>cyclonedx-npm-pipe</title>
+      <link>http://localhost:1313/products/cyclonedx-npm-pipe/</link>
       <pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate>
-      <guid>http://localhost:1313/products/example/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan dapibus purus, vel maximus erat facilisis vel. Suspendisse eu ipsum consequat, sodales nulla vel, faucibus velit. Fusce imperdiet lacus nec cursus auctor. In vulputate arcu et nulla placerat, nec pulvinar quam rhoncus. Praesent vel placerat nunc. Mauris elit felis, pulvinar egestas risus ut, fermentum ullamcorper orci. Integer tempor, neque sed fermentum eleifend, ligula est tincidunt purus, sodales semper elit enim ut mi. Vestibulum commodo tristique hendrerit. Duis interdum tristique augue id aliquam. Sed et tellus aliquam, accumsan erat at, facilisis tortor. Donec ac sapien sed lectus ullamcorper ultrices. Nullam placerat mauris nec urna rhoncus, vitae faucibus nulla venenatis. Donec vestibulum justo auctor, vestibulum diam quis, egestas erat. Vivamus volutpat et metus ut fermentum. Donec volutpat neque nec quam lacinia, nec faucibus felis ullamcorper.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/products/cyclonedx-npm-pipe/</guid>
+      <description>&lt;p&gt;Bitbucket pipe to generate a CycloneDX sBOM for node/npm projects&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/shiftleftcyber/cyclonedx-npm-pipe&#34;&gt;cyclonedx-npm-pipe&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Markdown Syntax Guide</title>
-      <link>http://localhost:1313/blog/markdown-syntax/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/markdown-syntax/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+      <title>sbom-utility-pipe</title>
+      <link>http://localhost:1313/products/sbom-utilities-pipe/</link>
+      <pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate>
+      <guid>http://localhost:1313/products/sbom-utilities-pipe/</guid>
+      <description>&lt;p&gt;A Bitbucket Pipe containing a collection of open source tools to perform various types of additional analysis on a CycloneDX or SPDX sBOM (Software Bill of Materials).&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/shiftleftcyber/sbom-utilities-pipe&#34;&gt;sbom-utilities-pipe&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Placeholder Text</title>
-      <link>http://localhost:1313/blog/placeholder-text/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/placeholder-text/</guid>
-      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
+      <title>syft-bitbucket-pipe</title>
+      <link>http://localhost:1313/products/syft-bitbucket-pipe/</link>
+      <pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate>
+      <guid>http://localhost:1313/products/syft-bitbucket-pipe/</guid>
+      <description>&lt;p&gt;Generates a Software Bill of Materials as part of a Bitbucket Pipeline for various project types&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/shiftleftcyber/syft-bitbucket-pipe&#34;&gt;syft-bitbucket-pipe&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Math Typesetting</title>
-      <link>http://localhost:1313/blog/math-typesetting/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/math-typesetting/</guid>
-      <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
+      <title>BSides Toronto 2024</title>
+      <link>http://localhost:1313/blog/bsidesto/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bsidesto/</guid>
+      <description>&lt;h2 id=&#34;bsides-toronto-2024&#34;&gt;BSides Toronto 2024&lt;/h2&gt;</description>
     </item>
     <item>
-      <title>Emoji Support</title>
-      <link>http://localhost:1313/blog/emoji-support/</link>
-      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/emoji-support/</guid>
-      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
+      <title>Case Study: Generting SBOMs for each release</title>
+      <link>http://localhost:1313/blog/ownersbox_casestudy/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/ownersbox_casestudy/</guid>
+      <description>&lt;h2 id=&#34;case-study-generting-sboms-for-each-release&#34;&gt;Case Study: Generting SBOMs for each release&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Understanding the EU Cyber Resilience Act: What It Means for SBOMs</title>
+      <link>http://localhost:1313/blog/eucra/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/eucra/</guid>
+      <description>&lt;h2 id=&#34;understanding-the-eu-cyber-resilience-act-what-it-means-for-sboms&#34;&gt;Understanding the EU Cyber Resilience Act: What It Means for SBOMs&lt;/h2&gt;&#xA;&lt;p&gt;The EU Cyber Resilience Act (CRA) is a landmark regulation aimed at improving the cybersecurity of products with digital elements. It establishes stringent requirements for manufacturers, importers, and distributors to ensure that their products are secure throughout their lifecycle. A central aspect of this regulation is the requirement for a Software Bill of Materials (SBOM)—a detailed inventory of all software components used in a product.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding EO 14028: Enhancing the Nation’s Cybersecurity</title>
+      <link>http://localhost:1313/blog/eo14028/</link>
+      <pubDate>Mon, 09 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/eo14028/</guid>
+      <description>&lt;h2 id=&#34;understanding-eo-14028-enhancing-the-nations-cybersecurity&#34;&gt;Understanding EO 14028: Enhancing the Nation’s Cybersecurity&lt;/h2&gt;&#xA;&lt;p&gt;In May 2021, President Joe Biden issued Executive Order 14028, a transformative policy aimed at fortifying the United States&amp;rsquo; cybersecurity infrastructure. This order was a direct response to growing cyber threats, including high-profile incidents like the SolarWinds attack and ransomware assaults on critical infrastructure. EO 14028 focuses on modernizing federal cybersecurity practices and establishing robust frameworks to protect government systems and private-sector organizations involved in national security.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;&gt;Apache Licence 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;&#xA;&lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/yuin/goldmark&#34;&gt;https://github.com/yuin/goldmark&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/alecthomas/chroma&#34;&gt;https://github.com/alecthomas/chroma&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/muesli/smartcrop&#34;&gt;https://github.com/muesli/smartcrop&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;https://github.com/spf13/viper&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;services&#34;&gt;Services&lt;/h1&gt;&#xA;&lt;p&gt;At &lt;strong&gt;ShiftLeftCyber&lt;/strong&gt;, we specialize in &lt;strong&gt;software supply chain consulting&lt;/strong&gt;, empowering businesses to achieve secure and efficient software development practices. Our expertise centers around &lt;strong&gt;Software Bill of Materials (SBOMs)&lt;/strong&gt; to enhance transparency, compliance, and trust in your software supply chain.&lt;/p&gt;&#xA;&lt;h2 id=&#34;our-expertise&#34;&gt;Our Expertise&lt;/h2&gt;&#xA;&lt;h3 id=&#34;sbom-implementation&#34;&gt;SBOM Implementation&lt;/h3&gt;&#xA;&lt;p&gt;We help you integrate SBOMs into your development lifecycle, using industry standards like &lt;strong&gt;CycloneDX&lt;/strong&gt; and &lt;strong&gt;SPDX&lt;/strong&gt; to provide a detailed inventory of your software components.&lt;/p&gt;&#xA;&lt;h3 id=&#34;sbom-signing-and-verification&#34;&gt;SBOM Signing and Verification&lt;/h3&gt;&#xA;&lt;p&gt;Ensure the authenticity and integrity of your SBOMs with our signing and verification solutions. We support cutting-edge methods such as &lt;strong&gt;Cosign&lt;/strong&gt;, &lt;strong&gt;XML Signature (xmlsig)&lt;/strong&gt;, and &lt;strong&gt;JSON Signature Format (JSF)&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Services</title>
@@ -59,9 +73,9 @@
     </item>
     <item>
       <title>Contact</title>
-      <link>http://localhost:1313/contact/</link>
+      <link>http://localhost:1313/contactold/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/contact/</guid>
+      <guid>http://localhost:1313/contactold/</guid>
       <description>&lt;p&gt;To contact us, please fill out the form below.&lt;/p&gt;&#xA;&lt;iframe src=&#34;https://docs.google.com/forms/d/e/1FAIpQLSejHcxpAguQC2_LZJcYngmPNVr4QucGrNsA3VCrEboMhFPL4A/viewform?embedded=true&#34; &#xA;        width=&#34;640&#34; &#xA;        height=&#34;1554&#34; &#xA;        frameborder=&#34;0&#34; &#xA;        marginheight=&#34;0&#34; &#xA;        marginwidth=&#34;0&#34;&gt;Loading…&lt;/iframe&gt;</description>
     </item>
   </channel>

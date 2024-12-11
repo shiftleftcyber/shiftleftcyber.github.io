@@ -6,14 +6,35 @@
     <description>Recent content in Css on ShiftLeftCyber</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Dec 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Markdown Syntax Guide</title>
-      <link>http://localhost:1313/blog/markdown-syntax/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/markdown-syntax/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+      <title>BSides Toronto 2024</title>
+      <link>http://localhost:1313/blog/bsidesto/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bsidesto/</guid>
+      <description>&lt;h2 id=&#34;bsides-toronto-2024&#34;&gt;BSides Toronto 2024&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Case Study: Generting SBOMs for each release</title>
+      <link>http://localhost:1313/blog/ownersbox_casestudy/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/ownersbox_casestudy/</guid>
+      <description>&lt;h2 id=&#34;case-study-generting-sboms-for-each-release&#34;&gt;Case Study: Generting SBOMs for each release&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Understanding the EU Cyber Resilience Act: What It Means for SBOMs</title>
+      <link>http://localhost:1313/blog/eucra/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/eucra/</guid>
+      <description>&lt;h2 id=&#34;understanding-the-eu-cyber-resilience-act-what-it-means-for-sboms&#34;&gt;Understanding the EU Cyber Resilience Act: What It Means for SBOMs&lt;/h2&gt;&#xA;&lt;p&gt;The EU Cyber Resilience Act (CRA) is a landmark regulation aimed at improving the cybersecurity of products with digital elements. It establishes stringent requirements for manufacturers, importers, and distributors to ensure that their products are secure throughout their lifecycle. A central aspect of this regulation is the requirement for a Software Bill of Materials (SBOM)—a detailed inventory of all software components used in a product.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding EO 14028: Enhancing the Nation’s Cybersecurity</title>
+      <link>http://localhost:1313/blog/eo14028/</link>
+      <pubDate>Mon, 09 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/eo14028/</guid>
+      <description>&lt;h2 id=&#34;understanding-eo-14028-enhancing-the-nations-cybersecurity&#34;&gt;Understanding EO 14028: Enhancing the Nation’s Cybersecurity&lt;/h2&gt;&#xA;&lt;p&gt;In May 2021, President Joe Biden issued Executive Order 14028, a transformative policy aimed at fortifying the United States&amp;rsquo; cybersecurity infrastructure. This order was a direct response to growing cyber threats, including high-profile incidents like the SolarWinds attack and ransomware assaults on critical infrastructure. EO 14028 focuses on modernizing federal cybersecurity practices and establishing robust frameworks to protect government systems and private-sector organizations involved in national security.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

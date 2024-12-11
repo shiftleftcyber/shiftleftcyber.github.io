@@ -9,11 +9,25 @@
     <lastBuildDate>Tue, 23 Jun 2020 12:33:45 +1000</lastBuildDate>
     <atom:link href="http://localhost:1313/products/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Example Projectrrr</title>
-      <link>http://localhost:1313/products/example/</link>
+      <title>cyclonedx-npm-pipe</title>
+      <link>http://localhost:1313/products/cyclonedx-npm-pipe/</link>
       <pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate>
-      <guid>http://localhost:1313/products/example/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan dapibus purus, vel maximus erat facilisis vel. Suspendisse eu ipsum consequat, sodales nulla vel, faucibus velit. Fusce imperdiet lacus nec cursus auctor. In vulputate arcu et nulla placerat, nec pulvinar quam rhoncus. Praesent vel placerat nunc. Mauris elit felis, pulvinar egestas risus ut, fermentum ullamcorper orci. Integer tempor, neque sed fermentum eleifend, ligula est tincidunt purus, sodales semper elit enim ut mi. Vestibulum commodo tristique hendrerit. Duis interdum tristique augue id aliquam. Sed et tellus aliquam, accumsan erat at, facilisis tortor. Donec ac sapien sed lectus ullamcorper ultrices. Nullam placerat mauris nec urna rhoncus, vitae faucibus nulla venenatis. Donec vestibulum justo auctor, vestibulum diam quis, egestas erat. Vivamus volutpat et metus ut fermentum. Donec volutpat neque nec quam lacinia, nec faucibus felis ullamcorper.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/products/cyclonedx-npm-pipe/</guid>
+      <description>&lt;p&gt;Bitbucket pipe to generate a CycloneDX sBOM for node/npm projects&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/shiftleftcyber/cyclonedx-npm-pipe&#34;&gt;cyclonedx-npm-pipe&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>sbom-utility-pipe</title>
+      <link>http://localhost:1313/products/sbom-utilities-pipe/</link>
+      <pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate>
+      <guid>http://localhost:1313/products/sbom-utilities-pipe/</guid>
+      <description>&lt;p&gt;A Bitbucket Pipe containing a collection of open source tools to perform various types of additional analysis on a CycloneDX or SPDX sBOM (Software Bill of Materials).&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/shiftleftcyber/sbom-utilities-pipe&#34;&gt;sbom-utilities-pipe&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>syft-bitbucket-pipe</title>
+      <link>http://localhost:1313/products/syft-bitbucket-pipe/</link>
+      <pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate>
+      <guid>http://localhost:1313/products/syft-bitbucket-pipe/</guid>
+      <description>&lt;p&gt;Generates a Software Bill of Materials as part of a Bitbucket Pipeline for various project types&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/shiftleftcyber/syft-bitbucket-pipe&#34;&gt;syft-bitbucket-pipe&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

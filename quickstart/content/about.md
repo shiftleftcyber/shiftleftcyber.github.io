@@ -6,20 +6,28 @@ aliases = ["about-us", "about-hugo", "contact"]
 author = "Hugo Authors"
 +++
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+# Services  
 
-Hugo makes use of a variety of open source projects including:
+At **ShiftLeftCyber**, we specialize in **software supply chain consulting**, empowering businesses to achieve secure and efficient software development practices. Our expertise centers around **Software Bill of Materials (SBOMs)** to enhance transparency, compliance, and trust in your software supply chain.  
 
-* https://github.com/yuin/goldmark
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+## Our Expertise  
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
+### SBOM Implementation  
+We help you integrate SBOMs into your development lifecycle, using industry standards like **CycloneDX** and **SPDX** to provide a detailed inventory of your software components.  
 
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
+### SBOM Signing and Verification  
+Ensure the authenticity and integrity of your SBOMs with our signing and verification solutions. We support cutting-edge methods such as **Cosign**, **XML Signature (xmlsig)**, and **JSON Signature Format (JSF)**.  
 
-Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
+### Vulnerability Management  
+Leverage SBOMs to identify and address vulnerabilities in your software supply chain. Our tailored solutions streamline your risk management and compliance processes.  
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+### Compliance Support  
+Stay ahead of regulations like the **EU Cyber Resilience Act**. We provide guidance to ensure your software meets security and transparency requirements.  
+
+### Custom Solutions  
+We deliver customized tools and workflows to suit your unique supply chain needs, empowering your team to maintain secure and traceable software practices.  
+
+---  
+
+Want to learn how we can strengthen your software supply chain? [Contact us](/contactOld) today!  
+
