@@ -8,7 +8,7 @@ tags = [
     "css",
     "html",
 ]
-image = "img/logo/oddsjam.png"
+image = "img/logos/eucra.webp"
 
 series = ["Standards"]
 aliases = [""]

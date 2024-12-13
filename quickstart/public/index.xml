@@ -30,20 +30,6 @@
       <description>&lt;p&gt;Generates a Software Bill of Materials as part of a Bitbucket Pipeline for various project types&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/shiftleftcyber/syft-bitbucket-pipe&#34;&gt;syft-bitbucket-pipe&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>BSides Toronto 2024</title>
-      <link>http://localhost:1313/blog/bsidesto/</link>
-      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/bsidesto/</guid>
-      <description>&lt;h2 id=&#34;bsides-toronto-2024&#34;&gt;BSides Toronto 2024&lt;/h2&gt;</description>
-    </item>
-    <item>
-      <title>Case Study: Generting SBOMs for each release</title>
-      <link>http://localhost:1313/blog/ownersbox_casestudy/</link>
-      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/ownersbox_casestudy/</guid>
-      <description>&lt;h2 id=&#34;case-study-generting-sboms-for-each-release&#34;&gt;Case Study: Generting SBOMs for each release&lt;/h2&gt;</description>
-    </item>
-    <item>
       <title>Understanding the EU Cyber Resilience Act: What It Means for SBOMs</title>
       <link>http://localhost:1313/blog/eucra/</link>
       <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>

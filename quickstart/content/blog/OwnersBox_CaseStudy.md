@@ -12,6 +12,7 @@ image = "img/logo/oddsjam.png"
 
 series = ["Standards"]
 aliases = [""]
+draft = true
 +++
 
 ## Case Study: Generting SBOMs for each release

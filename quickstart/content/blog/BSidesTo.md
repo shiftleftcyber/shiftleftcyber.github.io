@@ -12,6 +12,7 @@ image = "img/logo/oddsjam.png"
 
 series = ["Standards"]
 aliases = [""]
+draft = true
 +++
 
 ## BSides Toronto 2024
