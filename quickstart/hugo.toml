@@ -8,7 +8,7 @@ theme = "tella"
 enableRobotsTXT = true
 
 # Please enable this feature if the site is available in Japanese, Chinese or Korean.
-#hasCJKLanguage = true
+hasCJKLanguage = false
 
 # If you're using Google Analytics, you can enable this feature.
 #googleAnalytics = "UA-12345678-1"
@@ -24,44 +24,35 @@ enableRobotsTXT = true
   googleFonts = true
 
   [params.logo]
-    main = "img/logo/oddsjam.png"
-    alt = "Tella Logo"
+    main = "img/logos/marketing_site_logos/main.png"
+    alt = "SBOM management solutions by ShiftLeftCyber"
 
     # The size parameter is the class name of tailwindcss
     # https://tailwindcss.com/
     size = "h-14"
 
   [params.site]
-    name = "ShiftLeftCyber"
+    name = "ShiftLeftCyber.io"
 
   [params.icon]
     #If you want to use FontAwesome, set this parameter to true.
     fontawesome = true
 
   [params.homepage_meta_tags]
-    meta_description = "A Hugo Theme for OSSProject, Companies, Organization..."
-    meta_og_title = "Tella"
+    meta_description = "ShiftLeftCyber helps manage Software Bill of Materials (SBOM) with compliance-focused solutions, enhancing cyber resilience."
+    meta_og_title = "ShiftLeftCyber"
     meta_og_type = "website"
-    meta_og_url = "https://tella.pages.dev"
-    meta_og_image = "https://raw.githubusercontent.com/opera7133/tella/master/images/tn.png"
-    meta_og_description = "A Hugo Theme for OSSProject, Companies, Organization..."
-    meta_twitter_card = "summary_large_image"
-    meta_twitter_site = "@username"
-    meta_twitter_creator = "@username"
+    meta_og_url = "https://shiftleftcyber.io"
+    meta_og_image = "https://shiftleftcyber.io/img/high-res/metaimage.jpg"
+    meta_og_description = "Discover our innovative solutions and read our latest insights on our blog."
 
 [menu]
 
   [[menu.main]]
     identifier = "products"
-    name = "Products"
+    name = "Products & Services"
     url = "/products/"
     weight = 1
-
-  [[menu.main]]
-   identifier = "services"
-   name = "Services"
-   url = "/about/"
-   weight = 2
 
   [[menu.main]]
     identifier = "blog"
@@ -92,3 +83,4 @@ enableRobotsTXT = true
     url = "https://github.com/shiftleftcyber"
     pre = "<i class='icon-github text-2xl'></i>"
       weight = 2
+  

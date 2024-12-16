@@ -1,14 +1,14 @@
 [
   {
-    "title": "Streamline Compliance",
-    "description": "EO 14028 & EU CRA",
-    "icon": "icon-desktop_windows",
-    "link": "blog/markdown-syntax/"
+    "title": "Make Sense of Your Supply Chain",
+    "description": "SBOM Generation and Analysis",
+    "icon": "icon-desktop_windows"
   },
   {
-    "title": "Understand & Secure Your Supply Chain",
-    "description": "Know what your shipping",
-    "icon": "icon-desktop_windows"
+    "title": "Streamline Compliance",
+    "description": "EO 14028, EU CRA & More",
+    "icon": "icon-desktop_windows",
+    "link": "products"
   },
   {
     "title": "Seamless Integration",
