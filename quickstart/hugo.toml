@@ -24,7 +24,7 @@ hasCJKLanguage = false
   googleFonts = true
 
   [params.logo]
-    main = "img/logos/marketing_site_logos/main.png"
+    main = "img/logos/marketing_site_logos/ShiftLeftCyberMainLogo.png"
     alt = "SBOM management solutions by ShiftLeftCyber"
 
     # The size parameter is the class name of tailwindcss
