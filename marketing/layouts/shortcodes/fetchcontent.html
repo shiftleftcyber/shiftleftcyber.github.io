@@ -1,0 +1,4 @@
+{{ $url := .Get "url" }}
+{{ $resource := resources.GetRemote $url }}
+{{ $content := $resource.Content | markdownify }}
+{{ $content }}
