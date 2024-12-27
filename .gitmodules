@@ -1,6 +1,0 @@
-[submodule "marketing/themes/ananke"]
-	path = marketing/themes/ananke
-	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
-[submodule "marketing/themes/tella"]
-	path = marketing/themes/tella
-	url = https://github.com/opera7133/tella.git

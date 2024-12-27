@@ -45,6 +45,8 @@ enableRobotsTXT = true
     meta_og_url = "https://shiftleftcyber.io"
     meta_og_image = "https://shiftleftcyber.io/img/high-res/metaimage.jpg"
     meta_og_description = "Discover our innovative solutions and read our latest insights on our blog."
+    meta_og_author = "ShiftLeftCyber"
+    meta_og_keywords = "SBOM, Software Bill of Materials, compliance, security, audit-ready reporting, cyber resilience, CycloneDX, SPDX"
 
 [menu]
 
