@@ -26,3 +26,4 @@ node_modules/
 .DS_Store
 
 marketing/public/*
+marketing/resources/
