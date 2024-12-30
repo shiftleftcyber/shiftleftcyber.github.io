@@ -1,28 +1,27 @@
-
 [
     {
-      "title": "SBOM Authoring",
-      "description": "SBOM Generation, SBOM Augmentation & SBOM Enrichment"
+      "title": "SBOM Lifecycle Managnment",
+      "description": "SBOM Generation, Signing, Transportation & Analysis"
     },
     {
-      "title": "SBOM Signing & Verification",
-      "description": "Ensure the authenticity and integrity of your SBOMs"
+      "title": "Open Source Risk Managnment",
+      "description": "Manage and Control Open Source Risk in Your Supply Chain"
     },
     {
-      "title": "Vulnerability Management",
-      "description": "Identify and address vulnerabilities in your software supply chain"
+      "title": "Continuous Compliance",
+      "description": "Demonstrate Continuous Compliance With the SSDF, SLSA & FedRAMP Frameworks"
     },
     {
-      "title": "Streamline Compliance & OSS License Managnment",
-      "description": "EO 14028, EU CRA, PCI DSS 4.0 & More"
+      "title": "Custom CI/CD Solutions",
+      "description": "Speed up the Feedback Loop with Custom CI/CD Pipeleines & Workflows"
     },
     {
-      "title": "CI Support",
-      "description": "With your existing GitHub, GitLab, Bitbicket & Azure Pipelines"
+      "title": "EO14028 & EU CRA Validation",
+      "description": "Ensure Compliance with Executive Order 14028 and the European Cyber Resilience Act"
     },
     {
-      "title": "Custom Solutions",
-      "description": "Customized tools and workflows to suit your unique supply chain needs"
+      "title": "Vulnerability Disclosure Automation",
+      "description": "Automate Vulnerability Reporting Utilizing VEX and VDR"
     }
   ]
   
