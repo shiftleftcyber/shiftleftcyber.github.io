@@ -27,3 +27,6 @@ node_modules/
 
 marketing/public/*
 marketing/resources/
+
+# vscode
+.vscode/*
