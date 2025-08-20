@@ -5,26 +5,48 @@ aliases = ["about-us", "about-hugo", "contact"]
 author = "Hugo Authors"
 +++
 
-# About  
+# About SecureSBOM by ShiftLeftCyber
 
-At **ShiftLeftCyber**, we specialize in managing the full **software supply chain** lifecycle including SBOM Generation, SBOM Augmentation, SBOM Enrichment, SBOM Signing, SBOM Sharing & SBOM Analysis. We believe you cannot secure what you dont know. At ShiftLeftCyber we help you Streamline Compliance & Secure your Supply Chain.
+SecureSBOM is the enterprise-grade solution from **ShiftLeftCyber**, designed to manage the full life cycle of **Software Bill of Materials (SBOMs)** across your software supply chain.
 
-### SBOM Authoring  
-We help you generate, augment & enrich SBOMs directelly in your CI Pipelines using industry standards like **CycloneDX** and **SPDX** to provide a detailed inventory of your software components.
+---
 
-### SBOM Signing and Verification  
-Ensure the authenticity and integrity of your SBOMs with our signing and verification solutions. We support methods such as **Cosign** and **JSON Signature Format (JSF)**.
+## What We Do
 
-### Vulnerability Management  
-Leverage SBOMs to identify and address vulnerabilities in your software supply chain. Our tailored solutions streamline your risk management and compliance processes.  
+At **ShiftLeftCyber**, we empower organizations to:
 
-### Compliance Support  
-Stay ahead of regulations like the **EU Cyber Resilience Act**, **EO14028**, **PCI DSS 4.0** and others. We provide guidance to ensure your software meets security and transparency requirements.  
+- **Generate, augment, and enrich SBOMs**  
+  Embedded directly into your CI/CD pipelines, using industry-standard formats like **CycloneDX** and **SPDX**—allowing a comprehensive, accurate software component inventory.
 
-### Custom Solutions  
-We deliver customized tools and workflows to suit your unique supply chain needs, empowering your team to maintain secure and traceable software practices.  
+- **Sign and verify SBOMs**  
+  Ensure both authenticity and integrity of your SBOMs through signing and verification using tools such as **Cosign** and the **JSON Signature Format (JSF)**. 
 
----  
+- **Analyze and remediate vulnerabilities**  
+  Leverage SBOMs to pinpoint and manage software supply chain risks—enhancing vulnerability detection, response, and remediation workflows.
 
-Want to learn how we can strengthen your software supply chain? [Contact us](/contactus) today
-  
+- **Streamline compliance**  
+  Stay ahead of evolving regulatory requirements—including the **EU Cyber Resilience Act**, **EO 14028**, **PCI DSS 4.0**, and more—with expert support and tooling that helps ensure transparency and compliance.
+
+- **Deliver custom solutions**  
+  Tailored tools and workflows adapt to your environment, enabling secure, traceable, and efficient SBOM practices.
+
+---
+
+## Why It Matters
+
+*You cannot secure what you don’t know.*
+
+In a rapidly scaling software ecosystem—where third-party and open-source components are ubiquitous—visibility into your software's composition is essential. SBOMs provide that **transparency**, enabling faster vulnerability response, stronger compliance, and supply chain trust. :contentReference[oaicite:6]{index=6}
+
+SecureSBOM consolidates all aspects of SBOM lifecycle management—from generation to sharing—into one unified, enterprise-ready framework.
+
+---
+
+## Get in Touch
+
+Ready to **secure your supply chain**?  
+[Contact us](/contactus/) to discover how SecureSBOM can elevate your SBOM strategy—and your security posture.
+
+---
+
+© ShiftLeftCyber 2025. All rights reserved.

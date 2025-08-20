@@ -4291,3 +4291,141 @@ video {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 }
+
+/* SecureSBOM Page Styling */
+.hero-section {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .features-grid, .advantages-grid, .cta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .workflow-section {
+    background: #f8fafc;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin: 3rem 0;
+  }
+  
+  .workflow-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .workflow-column {
+    padding: 2.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    min-height: 400px;
+  }
+  
+  .workflow-column h3 {
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #4299e1;
+    padding-bottom: 0.75rem;
+    font-size: 1.5rem;
+  }
+
+  .workflow-column h4 {
+    color: #4a5568;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .workflow-column ol, .workflow-column ul {
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .workflow-column li {
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  
+  .cta-card {
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .cta-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .cta-section {
+    margin: 3rem 0;
+  }
+  
+  /* Responsive design */
+  @media (min-width: 1400px) {
+    .workflow-grid {
+      max-width: 1400px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .workflow-grid {
+      gap: 2rem;
+      max-width: 100%;
+    }
+    
+    .workflow-column {
+      padding: 2rem;
+    }
+  }
+
+  /* Responsive design for mobile */
+@media (max-width: 768px) {
+    .workflow-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .workflow-section {
+      padding: 2rem 1rem;
+      margin: 2rem 0;
+    }
+    
+    .workflow-column {
+      padding: 1.5rem;
+      min-height: auto;
+    }
+  }
