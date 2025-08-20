@@ -1,27 +1,40 @@
 [
     {
-      "title": "SBOM Lifecycle Managnment",
-      "description": "SBOM Generation, Signing, Transportation & Analysis"
+      "title": "Scalable SBOM Signing & Verification",
+      "description": "Enterprise-grade cryptographic signing and validation for every SBOM you produce or consume.",
+      "icon": "fas fa-shield-alt",
+      "link": "/securesbom"
     },
     {
-      "title": "Open Source Risk Managnment",
-      "description": "Manage and Control Open Source Risk in Your Supply Chain"
+      "title": "Standards-Compliant (CycloneDX & SPDX)",
+      "description": "Native support for CycloneDX signatures and detached SPDX verification, ensuring interoperability across ecosystems.",
+      "icon": "fas fa-code-branch",
+      "link": "https://github.com/shiftleftcyber/sbom-validator",
+      "target": "_blank"
     },
     {
-      "title": "Continuous Compliance",
-      "description": "Demonstrate Continuous Compliance With the SSDF, SLSA & FedRAMP Frameworks"
+      "title": "Enterprise-Ready Architecture",
+      "description": "Multi-tenant, compliance-ready design that scales to regulated industries and large organizations",
+      "icon": "fas fa-building",
+      "link": "/securesbom"
     },
     {
-      "title": "Custom CI/CD Solutions",
-      "description": "Speed up the Feedback Loop with Custom CI/CD Pipeleines & Workflows"
+      "title": "Seamless CI/CD Integration",
+      "description": "API-first design enables easy drop-in integration with existing DevSecOps pipelines (GitHub, GitLab, Jenkins, Bitbucket).",
+      "icon": "fab fa-github",
+      "link": "https://github.com/shiftleftcyber/secure-sbom-action"
     },
     {
-      "title": "EO14028 & EU CRA Validation",
-      "description": "Ensure Compliance with Executive Order 14028 and the European Cyber Resilience Act"
+      "title": "Secure Key Management (Cloud & On-Prem HSM)",
+      "description": "Support for Hardware Security Modules to protect signing keys in any environment.",
+      "icon": "fas fa-key",
+      "link": "/securesbom"
     },
     {
-      "title": "Vulnerability Disclosure Automation",
-      "description": "Automate Vulnerability Reporting Utilizing VEX and VDR"
+      "title": "Offline & Clean-Room Verification",
+      "description": "Perform signing and validation in air-gapped or highly regulated environments with full offline support.",
+      "icon": "fas fa-lock",
+      "link": "/securesbom"
     }
   ]
   

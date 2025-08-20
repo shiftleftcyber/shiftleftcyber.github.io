@@ -16,6 +16,11 @@ googleAnalytics = "G-CR0HB4HF2K"
 # Disqus Comment System
 #disqusShortname = ""
 
+[markup]
+  [markup.goldmark]
+    [markup.renderer]
+      unsafe = true
+
 [params]
 
   showBlog = true
@@ -24,7 +29,7 @@ googleAnalytics = "G-CR0HB4HF2K"
   googleFonts = true
 
   [params.logo]
-    main = "img/logos/ShiftLeftCyberMainLogo.png"
+    main = "img/logos/ShiftLeftCyberMainLogoUpdated.png"
     alt = "SBOM management solutions by ShiftLeftCyber"
 
     # The size parameter is the class name of tailwindcss
@@ -51,28 +56,35 @@ googleAnalytics = "G-CR0HB4HF2K"
 [menu]
 
   [[menu.main]]
-    identifier = "products"
-    name = "Products"
-    url = "/products/"
+    identifier = "securesbom"
+    name = "SecureSBOM"
+    url = "/securesbom/"
     weight = 1
+
+  # ToDo - Add this back in when we have a better grasp of our professional services
+  #[[menu.main]]
+  #  identifier = "products"
+  #  name = "Products & Services"
+  #  url = "/products/"
+  #  weight = 2
 
   [[menu.main]]
     identifier = "blog"
     name = "Blog"
     url = "/blog/"
-    weight = 2
+    weight = 3
 
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 3
+    weight = 4
 
   [[menu.main]]
     identifier = "contact"
     name = "Contact"
     url = "/contactus/"
-    weight = 4
+    weight = 5
 
   # Footer Menu
   [[menu.footer]]
