@@ -14,10 +14,10 @@
     <div class="mx-3 col-span-3 lg:col-span-2 px-2">
         <h1 class="title text-5xl font-bold mb-3">{{.Title}}</h1>
         <section class="mb-4 text-lg">
-            <h4 id="date" class="flex flex-row items-center"><span class="icon-access_time text-2xl mr-2"></span>
-                {{ .Date.Format "2006/01/02" }} </h4>
+            <h4 id="date" class="flex flex-row items-center"><i class="fa-solid fa-calendar-day text-2xl mr-2"></i>
+                {{ .Date.Format "2006-01-02" }} </h4>
             {{ if .Params.author }}
-            <h4 class="flex flex-row items-center"><span class="icon-person text-2xl mr-2"></span>{{.Params.author}}
+            <h4 class="flex flex-row items-center"><span class="fa-solid fa-user text-2xl mr-2"></span>{{.Params.author}}
             </h4>
             {{ end }}
             {{ with .Params.categories }}
@@ -35,6 +35,15 @@
         <img class="my-4" src="{{ .Params.image | absURL }}">
         {{ end }}
         <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1">{{.Content}}</div>
+        {{ with .Params.linkedin }}
+        <div class="bg-gray-200 rounded-md p-4 my-4 flex items-center">
+            <i class="fa-brands fa-linkedin text-2xl linkedin-blue mr-3"></i>
+            <span>
+                This post was originally published on LinkedIn. To join the conversation and leave a comment, please
+                <a href="{{ . }}" class="text-blue-700 underline">visit the original post here</a>.
+            </span>
+        </div>
+        {{ end }}
         <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
             <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}" target="_blank"
                 title="Post" class="share-button x">
