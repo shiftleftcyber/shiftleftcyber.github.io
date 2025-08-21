@@ -20,4 +20,10 @@
 <link rel="stylesheet" href='{{ "/css/swiper-bundle.min.css" | relURL }}'>
 {{ end }}
 <link href='{{ "/css/style.min.css" | relURL }}' rel="stylesheet" type="text/css">
-<link rel="stylesheet" href='{{ "/css/custom.css" | relURL }}'>
+{{ $custom := resources.Get "css/custom.css" | postCSS }}
+{{ if hugo.IsServer }}
+<link rel="stylesheet" href="{{ $custom.RelPermalink }}" />
+{{ else }}
+{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+<link rel="stylesheet" href="{{ $custom.RelPermalink }}" />
+{{ end }}
