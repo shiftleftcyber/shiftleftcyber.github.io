@@ -31,7 +31,18 @@
             </div>
             {{ end }}
         </section>
-        {{ if .Params.image }}
+        {{ if .Params.youtube }}
+        <div class="my-4 aspect-video">
+            <iframe
+                src="https://www.youtube.com/embed/{{ .Params.youtube }}"
+                title="YouTube video"
+                allowfullscreen
+                class="w-full h-full rounded-md border"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            ></iframe>
+        </div>
+        {{ else if .Params.image }}
         <img class="my-4" src="{{ .Params.image | absURL }}">
         {{ end }}
         <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1">{{.Content}}</div>
