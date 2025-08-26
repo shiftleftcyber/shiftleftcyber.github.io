@@ -2,16 +2,7 @@
 author = ""
 title = "Understanding the EU Cyber Resilience Act: What It Means for SBOMs"
 date = "2024-12-10"
-description = ""
-tags = [
-    "markdown",
-    "css",
-    "html",
-]
-
 series = ["Standards"]
-aliases = [""]
-
 image = "img/thirdparty/EU.png"
 +++
 

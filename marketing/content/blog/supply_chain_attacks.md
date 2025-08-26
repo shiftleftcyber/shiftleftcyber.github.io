@@ -2,16 +2,6 @@
 author = "CC"
 title = "The Temptation of Software Supply Chain Attacks"
 date = "2025-01-12"
-description = ""
-tags = [
-    "markdown",
-    "css",
-    "html",
-]
-
-series = [""]
-aliases = [""]
-
 image = "img/thirdparty/supply_chain_attack.webp"
 +++
 
