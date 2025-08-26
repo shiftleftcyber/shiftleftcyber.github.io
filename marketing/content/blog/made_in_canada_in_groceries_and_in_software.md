@@ -2,11 +2,6 @@
 author = "Jason Smith"
 title = "'Made in Canada' - in Groceries and in Software 🛒🍁💻"
 date = "2025-04-27"
-tags = [
-    "markdown",
-    "css",
-    "html",
-]
 linkedin = "https://www.linkedin.com/posts/j28smith_product-of-canada-vs-made-in-canada-activity-7315682416231096320-vusd"
 image = "img/thirdparty/made-in-vs-product-of-canada.png"
 youtube = "pApbYrNuAg4"
@@ -52,4 +47,4 @@ SBOMs are a great start to gain transparency. However, visibility alone isn’t 
 
 Have you checked the ingredients in your software lately? Do you know where they came from?
 
-hashtag#SBOM hashtag#SoftwareSupplyChain hashtag#CyberSecurity hashtag#SoftwareTransparency hashtag#MadeInCanada hashtag#DigitalSupplyChain hashtag#SoftwareRisk hashtag#TrustButVerify hashtag#DigitalTrust hashtag#OpenSourceSecurity hashtag#SecureDevelopment hashtag#DevSecOps hashtag#SoftwareIntegrity hashtag#CanadianTech hashtag#TechMadeInCanada 🍁💻🔐
+#SBOM #SoftwareSupplyChain #CyberSecurity #SoftwareTransparency #MadeInCanada #DigitalSupplyChain #SoftwareRisk #TrustButVerify #DigitalTrust #OpenSourceSecurity #SecureDevelopment #DevSecOps #SoftwareIntegrity #CanadianTech #TechMadeInCanada 🍁💻🔐

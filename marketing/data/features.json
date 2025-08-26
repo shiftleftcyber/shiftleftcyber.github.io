@@ -32,7 +32,7 @@
     },
     {
       "title": "Offline & Clean-Room Verification",
-      "description": "Perform signing and validation in air-gapped or highly regulated environments with full offline support.",
+      "description": "Perform signing and verification in air-gapped or highly regulated environments with full offline support.",
       "icon": "fas fa-lock",
       "link": "/securesbom"
     }
