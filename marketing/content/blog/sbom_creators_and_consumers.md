@@ -11,27 +11,32 @@ SBOMs are a critical tool for understanding your software supply chain. But not 
 There are 𝗰𝗿𝗲𝗮𝘁𝗼𝗿𝘀 and there are 𝗰𝗼𝗻𝘀𝘂𝗺𝗲𝗿𝘀. Sometimes they're the same person, but often they're not.
 
 👩🏻‍💻 𝗖𝗿𝗲𝗮𝘁𝗼𝗿𝘀
+
 These folks generate SBOMs as part of the software build or packaging process:
- 💻 Development teams
- ⚙️ CI/CD pipelines
- 📦 Software vendors
- 🛠️ Tooling platforms
+
+* 💻 Development teams
+* ⚙️ CI/CD pipelines
+* 📦 Software vendors
+* 🛠️ Tooling platforms
 
 🎯 Their job: Ensure SBOMs are accurate, complete and reflect the actual software build artifacts.
 
 🙋🏻‍♂️ 𝗖𝗼𝗻𝘀𝘂𝗺𝗲𝗿𝘀
+
 These folks use SBOMs to evaluate, verify, or monitor software:
- 🛡️ Security analysts
- 📦 Software integrators
- ⚖️ Compliance teams
- 🕵🏻‍♀️ QA / SRE engineers
- 👔 Customers (especially enterprise/government)
+
+* 🛡️ Security analysts
+* 📦 Software integrators
+* ⚖️ Compliance teams
+* 🕵🏻‍♀️ QA / SRE engineers
+* 👔 Customers (especially enterprise/government)
 
 🎯 Their job: Use SBOMs to assess risk, validate trust, and meet policy and/or regulatory requirements.
 
 🤓 𝗛𝗲𝗿𝗲’𝘀 𝘄𝗵𝗲𝗿𝗲 𝗶𝘁 𝗴𝗲𝘁𝘀 𝗶𝗻𝘁𝗲𝗿𝗲𝘀𝘁𝗶𝗻𝗴...
 
 If you're a 𝗰𝗿𝗲𝗮𝘁𝗼𝗿, you're responsible for 𝘁𝗿𝘂𝘁𝗵.
+
 If you're a 𝗰𝗼𝗻𝘀𝘂𝗺𝗲𝗿, you're responsible for 𝘁𝗿𝘂𝘀𝘁.
 
 This is why signing SBOMs and supporting cryptographic digital verification is critical. Without that, you might be consuming... misinformation? 🤷‍♂️
