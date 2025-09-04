@@ -115,9 +115,3 @@ Discuss enterprise features and custom solutions
 ---
 
 **Questions?** Our security experts are here to help. [Contact our team](/contactus/) to learn how SecureSBOM can transform your software supply chain security.
-
-### Related Resources
-- 📘 [SBOM Signing Best Practices](/blog/sbom-signing-best-practices/) 
-- 🔍 [Supply Chain Security Guide](/blog/supply-chain-security-guide/)
-- ⚖️ [EO 14028 Compliance Checklist](/blog/eo-14028-compliance/)
-- 🛠️ [CI/CD Integration Examples](/blog/cicd-sbom-integration/)
