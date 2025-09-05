@@ -3,7 +3,7 @@
       "title": "Scalable SBOM Signing & Verification",
       "description": "Enterprise-grade cryptographic signing and validation for every SBOM you produce or consume.",
       "icon": "fas fa-shield-alt",
-      "link": "/securesbom"
+      "link": "/securesbom/"
     },
     {
       "title": "Standards-Compliant (CycloneDX & SPDX)",
@@ -16,7 +16,7 @@
       "title": "Enterprise-Ready Architecture",
       "description": "Multi-tenant, compliance-ready design that scales to regulated industries and large organizations",
       "icon": "fas fa-building",
-      "link": "/securesbom"
+      "link": "/securesbom/"
     },
     {
       "title": "Seamless CI/CD Integration",
@@ -28,13 +28,13 @@
       "title": "Secure Key Management (Cloud & On-Prem HSM)",
       "description": "Support for Hardware Security Modules to protect signing keys in any environment.",
       "icon": "fas fa-key",
-      "link": "/securesbom"
+      "link": "/securesbom/"
     },
     {
       "title": "Offline & Clean-Room Verification",
       "description": "Perform signing and verification in air-gapped or highly regulated environments with full offline support.",
       "icon": "fas fa-lock",
-      "link": "/securesbom"
+      "link": "/securesbom/"
     }
   ]
   
