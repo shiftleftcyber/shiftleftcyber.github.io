@@ -1,7 +1,7 @@
 +++
 author = "Jason Smith"
 title = "'Made in Canada' - in Groceries and in Software 🛒🍁💻"
-date = "2025-04-27"
+date = "2025-04-06"
 linkedin = "https://www.linkedin.com/posts/j28smith_product-of-canada-vs-made-in-canada-activity-7315682416231096320-vusd"
 image = "img/thirdparty/made-in-vs-product-of-canada.png"
 youtube = "pApbYrNuAg4"

@@ -1,7 +1,7 @@
 +++
 author = "Jason Smith"
 title = "𝗪𝗵𝗼 𝗮𝗰𝘁𝘂𝗮𝗹𝗹𝘆 𝗯𝘂𝗶𝗹𝗱𝘀 𝗦𝗕𝗢𝗠𝘀? 𝗔𝗻𝗱 𝘄𝗵𝗼 𝗻𝗲𝗲𝗱𝘀 𝘁𝗵𝗲𝗺? 🤔🔍"
-date = "2025-05-18"
+date = "2025-04-27"
 linkedin = "https://www.linkedin.com/posts/j28smith_sbom-supplychainsecurity-cybersecurity-activity-7323408174688980993-TPze"
 image = "img/thirdparty/sbom-creators-and-consumers.png"
 +++
