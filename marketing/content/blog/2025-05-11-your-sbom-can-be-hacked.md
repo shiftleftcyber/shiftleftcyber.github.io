@@ -3,7 +3,7 @@ author = "Jason Smith"
 title = "Your SBOM Can Be Hacked 📦💀"
 date = "2025-05-11"
 linkedin = "https://www.linkedin.com/posts/j28smith_sbom-cybersecurity-supplychainsecurity-activity-7328855820031406080-e8UD/"
-image = "img/thirdparty/2025-06-01-sbom-attack-vectors.jpeg"
+image = "img/thirdparty/2025-05-11-sbom-attack-vectors.jpeg"
 +++
 
 Yes, even the one you just generated.

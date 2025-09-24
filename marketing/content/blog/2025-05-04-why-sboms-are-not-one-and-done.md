@@ -3,7 +3,7 @@ author = "Jason Smith"
 title = "Why SBOMs Are Not One-and-Done 📦🔄"
 date = "2025-05-04"
 linkedin = "https://www.linkedin.com/posts/j28smith_sbom-cybersecurity-softwaresupplychain-activity-7325922851973189634-o0SG"
-image = "img/thirdparty/2025-05-25-SBOMLifecycle.jpeg"
+image = "img/thirdparty/2025-05-04-SBOMLifecycle.jpeg"
 +++
 
 ✅ You've generated an SBOM. Congratulations!
