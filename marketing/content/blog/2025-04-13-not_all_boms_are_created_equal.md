@@ -1,7 +1,7 @@
 +++
 author = "Jason Smith"
 title = "Not all BOMs are created equal 👀"
-date = "2025-05-04"
+date = "2025-04-13"
 linkedin = "https://www.linkedin.com/posts/j28smith_sbom-cybersecurity-softwaredevelopment-activity-7318222884273823745-gKGJ"
 image = "img/thirdparty/bom-vs-sbom.jpeg"
 +++

@@ -1,7 +1,7 @@
 +++
 author = "Jason Smith"
 title = "What is an SBOM & Why Should You Care? 🤔💡"
-date = "2025-04-20"
+date = "2025-03-30"
 linkedin = "https://www.linkedin.com/posts/j28smith_cybersecurity-sbom-softwaresecurity-activity-7313193464173629444-8KfY"
 image = "img/thirdparty/ingredient-list-sbom.jpeg"
 +++

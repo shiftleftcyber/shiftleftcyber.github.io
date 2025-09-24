@@ -1,7 +1,7 @@
 +++
 author = "Jason Smith"
 title = "What's Inside an SBOM? 🧠"
-date = "2025-05-11"
+date = "2025-04-20"
 linkedin = "https://www.linkedin.com/posts/j28smith_sbom-cybersecurity-softwaredevelopment-activity-7320829663931510785-XfKw"
 image = "img/thirdparty/sbom-high-level-object-model-cyclonedx.jpeg"
 +++
