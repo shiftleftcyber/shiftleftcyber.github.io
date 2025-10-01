@@ -6,8 +6,6 @@ linkedin = "https://www.linkedin.com/posts/j28smith_sbom-softwaresecurity-supply
 image = "img/thirdparty/2025-06-08-sbom-signing-checklist.jpeg"
 +++
 
-🔏 SBOM Signing ≠ Security
-
 Just because an SBOM is signed doesn't mean it's safe.
 
 Signing is still important though. It gives you integrity. You know the SBOM wasn't tampered with after it was produced.
@@ -48,4 +46,4 @@ Signed SBOMs are better than unsigned ones. But we need complete, current, and v
 
 ❓ What else would increase your trust?
 
-hashtag#SBOM hashtag#SoftwareSecurity hashtag#SupplyChainSecurity hashtag#DigitalSignatures hashtag#SecureDevelopment hashtag#DevSecOps hashtag#ApplicationSecurity hashtag#SoftwareIntegrity hashtag#CyberSecurity
+#SBOM #SoftwareSecurity #SupplyChainSecurity #DigitalSignatures #SecureDevelopment #DevSecOps #ApplicationSecurity #SoftwareIntegrity #CyberSecurity
