@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  COMPONENT_NAME: ${{ github.repository }}
+  COMPONENT_NAME: shiftleftcyber.github.io
   COMPONENT_VERSION: ${{ github.sha }}
 
 jobs:
