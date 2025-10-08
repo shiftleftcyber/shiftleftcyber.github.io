@@ -26,4 +26,4 @@ jobs:
         with:
           path: ./marketing/
           format: cyclonedx-json
-          artifact-name: ${{ env.COMPONENT_NAME }}.${{ github.sha }}.sbom.cdx.json
+          artifact-name: ${{ env.COMPONENT_NAME }}.${{ env.COMPONENT_VERSION }}.sbom.cdx.json
