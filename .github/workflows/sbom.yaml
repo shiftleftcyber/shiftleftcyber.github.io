@@ -80,6 +80,7 @@ jobs:
             hugo-
       - name: Build the site
         run: |
+          cd marketing
           hugo \
             --gc \
             --minify \
