@@ -63,8 +63,8 @@ googleAnalytics = "G-CR0HB4HF2K"
 
   [[menu.main]]
     identifier = "securesbom_vs_cosign"
-    name = "SecureSBOM vs Cosign"
-    url = "/securesbom_vs_cosign/"
+    name = "SecureSBOM vs Sigstore"
+    url = "/securesbom_vs_sigstore/"
     weight = 2
 
   # ToDo - Add this back in when we have a better grasp of our professional services
