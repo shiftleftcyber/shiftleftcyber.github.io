@@ -19,7 +19,7 @@ At **ShiftLeftCyber**, we empower organizations to:
   Embedded directly into your CI/CD pipelines, using industry-standard formats like **CycloneDX** and **SPDX**—allowing a comprehensive, accurate software component inventory.
 
 - **Sign and verify SBOMs**  
-  Ensure both authenticity and integrity of your SBOMs through signing and verification using tools such as **Cosign** and the **JSON Signature Format (JSF)**. 
+  Ensure both authenticity and integrity of your SBOMs through signing and verification.
 
 - **Analyze and remediate vulnerabilities**  
   Leverage SBOMs to pinpoint and manage software supply chain risks—enhancing vulnerability detection, response, and remediation workflows.
