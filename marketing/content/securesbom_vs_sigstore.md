@@ -66,7 +66,7 @@ While **Sigstore** focuses primarily on open-source projects and OCI artifacts, 
 
 | Use Case | Recommended Solution |
 |-----------|----------------------|
-| Enterprise Software & Supply Chain Security | **SecureSBOM** |
+| Enterprise Software & Closed Source/Private Projects | **SecureSBOM** |
 | Open Source Projects | **Sigstore** |
 
 ---
