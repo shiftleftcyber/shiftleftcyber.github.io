@@ -6,6 +6,7 @@ layout: "single"
 ---
 
 # SecureSBOM
+
 ## Enterprise-Grade SBOM Signing & Verification at Scale
 
 > **Trusted SBOMs. Verified Supply Chains. Zero Compromise.**
@@ -19,14 +20,18 @@ SecureSBOM provides **cryptographic signing and verification** of your Software 
 ## Why SecureSBOM?
 
 ### 🔒 Sign Your SBOMs
+
 **Protect your software artifacts with cryptographic proof:**
+
 - **Integrity Assurance** — Detect any tampering or modification
 - **Publisher Authentication** — Prove legitimate source and ownership  
 - **Regulatory Compliance** — Meet EO 14028, NIST, and EU CRA requirements
 - **Audit Evidence** — Provide cryptographic proof for security reviews
 
 ### 🛡️ Verify SBOMs
+
 **Establish trust in your software supply chain:**
+
 - **Threat Detection** — Identify forged or compromised SBOMs early
 - **Automated Validation** — Scale trust verification across CI/CD pipelines
 - **Vendor Confidence** — Validate third-party software components
@@ -37,6 +42,7 @@ SecureSBOM provides **cryptographic signing and verification** of your Software 
 ## How It Works
 
 ### For SBOM Producers 🔨
+
 **Transform your software releases into trusted, verifiable artifacts:**
 
 1. **Generate** your SBOMs from source code, builds, or container images
@@ -45,15 +51,17 @@ SecureSBOM provides **cryptographic signing and verification** of your Software 
 4. **Archive** for compliance with full audit trails and metadata
 
 ### For SBOM Consumers 🛡️
+
 **Verify authenticity through multiple validation methods:**
 
 **Online Verification ✅**
-- Validate against transparency logs (Sigstore Rekor)
+
 - Confirm integrity, authenticity, and issuance timestamps
 - Automate in CI/CD pipelines and vendor onboarding
 - Real-time threat intelligence integration
 
 **Offline Verification 🔒**
+
 - Air-gapped and highly regulated environment support
 - Local validation using trusted public keys
 - No internet connectivity required
@@ -67,30 +75,32 @@ SecureSBOM provides **cryptographic signing and verification** of your Software 
 
 **🔐 Zero Trust Ready** — Enforce "verify everything" across your entire software pipeline
 
-**🌐 Standards Compliant** — Full support for CycloneDX, SPDX, and Sigstore ecosystems
+**🌐 Standards Compliant** — Full support for CycloneDX and SPDX
 
 **📊 Compliance Ready** — Generate audit-ready reports and evidence for regulatory requirements
 
 **🏢 Enterprise Scale** — Multi-tenant architecture with role-based access control
 
-**🔑 Flexible Key Management** — Support for HSMs, cloud KMS, and on-premises key stores
+**🔑 Flexible Key Management** — Support for HSMs, cloud KMS, and on-premise key stores
 
 ---
 
 ## Technical Specifications
 
 **Supported SBOM Formats:**
+
 - CycloneDX (1.4+) with native signature support
 - SPDX (2.3+) with detached signature verification
-- Custom format extensions via API
 
 **Integration Options:**
+
 - REST API with OpenAPI specification
 - Command-line interface (CLI) for local workflows  
-- Native plugins for popular CI/CD platforms
+- Native plugins for popular CI/CD platforms (GitHub Action)
 - Webhook support for real-time notifications
 
 **Security Features:**
+
 - Hardware Security Module (HSM) integration
 - Multi-signature workflows for critical releases
 - Timestamping and transparency log integration
@@ -101,14 +111,17 @@ SecureSBOM provides **cryptographic signing and verification** of your Software 
 ## Get Started Today
 
 ### 🎯 Request a Demo
+
 See SecureSBOM in action with your actual SBOMs
 **[Schedule Demo](/contactus/?type=demo)**
 
 ### 🔑 Get API Access
+
 Start integrating SBOM signing into your workflows
 **[Request API Key](/contactus/?type=api)**
 
 ### 💬 Talk to Sales
+
 Discuss enterprise features and custom solutions
 **[Contact Sales](/contactus/?type=sales)**
 
