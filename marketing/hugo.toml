@@ -61,6 +61,12 @@ googleAnalytics = "G-CR0HB4HF2K"
     url = "/securesbom/"
     weight = 1
 
+  [[menu.main]]
+    identifier = "securesbom_vs_cosign"
+    name = "SecureSBOM vs Cosign"
+    url = "/securesbom_vs_cosign/"
+    weight = 2
+
   # ToDo - Add this back in when we have a better grasp of our professional services
   #[[menu.main]]
   #  identifier = "products"
@@ -72,19 +78,19 @@ googleAnalytics = "G-CR0HB4HF2K"
     identifier = "blog"
     name = "Blog"
     url = "/blog/"
-    weight = 3
+    weight = 4
 
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 4
+    weight = 5
 
   [[menu.main]]
     identifier = "contact"
     name = "Contact"
     url = "/contactus/"
-    weight = 5
+    weight = 6
 
   # Footer Menu
   [[menu.footer]]
