@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - update-workflow
 
   workflow_dispatch:
 
@@ -23,6 +24,9 @@ defaults:
     working-directory: ./marketing
 
 jobs:
+  # --------------------------------------------------
+  # 1️⃣ Build
+  # --------------------------------------------------
   build:
     runs-on: ubuntu-latest
     env:
@@ -99,10 +103,13 @@ jobs:
           path: ${{ runner.temp }}/hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
+          name: build-output
           path: ./marketing/public
-
+  # --------------------------------------------------
+  # 2️⃣ Deploy
+  # --------------------------------------------------
   deploy:
     environment:
       name: github-pages
@@ -113,3 +120,61 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # --------------------------------------------------
+  # 3️⃣ Generate SBOM
+  # --------------------------------------------------
+  generate-sbom:
+    name: 📦 Generate SBOM
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v5
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v6
+        with:
+          name: build-output
+          path: ./marketing
+
+      - name: Generate CycloneDX SBOM
+        run: npx @cyclonedx/cyclonedx-npm --output-format JSON --output-file shiftleftcyber.github.io.cdx.json
+
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v5
+        with:
+          name: generated-sbom
+          path: ./marketing/shiftleftcyber.github.io.cdx.json
+
+  # --------------------------------------------------
+  # 4️⃣ Sign SBOM
+  # --------------------------------------------------
+  sign-sbom:
+    name: 🔏 Sign SBOM
+    runs-on: ubuntu-latest
+    needs: generate-sbom
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v5
+
+      - name: Download Generated SBOM
+        uses: actions/download-artifact@v6
+        with:
+          name: generated-sbom
+
+      - name: Sign SBOM
+        uses: shiftleftcyber/secure-sbom-action@v1.3.1
+        with:
+          sbom_file: shiftleftcyber.github.io.cdx.json
+          secure_sbom_action: sign
+          api_key: ${{ secrets.SECURE_SBOM_API_KEY }}
+          key_id: ${{ secrets.SECURE_SBOM_KEYID }}
+
+      - name: Upload Signed SBOM
+        uses: actions/upload-artifact@v5
+        with:
+          name: signed-sbom
+          path: ./marketing/shiftleftcyber.github.io.cdx.signed.json
