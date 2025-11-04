@@ -104,7 +104,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          name: build-output
           path: ./marketing/public
       - name: Generate CycloneDX SBOM
         run: npx @cyclonedx/cyclonedx-npm --output-format JSON --output-file shiftleftcyber.github.io.cdx.json
