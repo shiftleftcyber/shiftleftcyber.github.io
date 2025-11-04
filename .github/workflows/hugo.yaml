@@ -23,6 +23,9 @@ defaults:
     working-directory: ./marketing
 
 jobs:
+  # --------------------------------------------------
+  # 1️⃣ Build
+  # --------------------------------------------------
   build:
     runs-on: ubuntu-latest
     env:
@@ -38,12 +41,12 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       - name: Setup Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: ${{ env.GO_VERSION }}
           cache: false
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Setup Pages
@@ -99,10 +102,32 @@ jobs:
           path: ${{ runner.temp }}/hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
+          name: build-output
           path: ./marketing/public
-
+      - name: Generate CycloneDX SBOM
+        run: npx @cyclonedx/cyclonedx-npm --output-format JSON --output-file shiftleftcyber.github.io.cdx.json
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v5
+        with:
+          name: generated-sbom
+          path: ./marketing/shiftleftcyber.github.io.cdx.json
+      - name: Sign SBOM
+        uses: shiftleftcyber/secure-sbom-action@v1.3.1
+        with:
+          sbom_file: ./marketing/shiftleftcyber.github.io.cdx.json
+          secure_sbom_action: sign
+          api_key: ${{ secrets.SECURE_SBOM_API_KEY }}
+          key_id: ${{ secrets.SECURE_SBOM_KEYID }}
+      - name: Upload Signed SBOM
+        uses: actions/upload-artifact@v5
+        with:
+          name: signed-sbom
+          path: ./marketing/shiftleftcyber.github.io.cdx.signed.json
+  # --------------------------------------------------
+  # 2️⃣ Deploy
+  # --------------------------------------------------
   deploy:
     environment:
       name: github-pages
