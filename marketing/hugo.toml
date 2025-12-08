@@ -57,8 +57,8 @@ googleAnalytics = "G-CR0HB4HF2K"
 
   [[menu.main]]
     identifier = "securesbom"
-    name = "SecureSBOM"
-    url = "/securesbom/"
+    name = "SBOM Signing FAQ"
+    url = "/faq/"
     weight = 1
 
   [[menu.main]]
