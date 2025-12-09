@@ -1,0 +1,8 @@
+<details class="faq-item">
+    <summary class="faq-question">
+        {{ .Get "question" }}
+    </summary>
+    <div class="faq-answer">
+        {{ .Inner | markdownify }}
+    </div>
+</details>
