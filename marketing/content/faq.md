@@ -32,6 +32,7 @@ changes—parts 2 and 3 remain identical. Without SBOM signing, you would need t
 all three SBOMs every time, even though two of them didn’t change.
 
 However, if each SBOM was already signed and verified, you can:
+
 * Trust the signatures on parts 2 and 3
 * Confidently reuse them in the aggregated SBOM
 * Avoid unnecessary rebuilding, rescanning, or reprocessing
@@ -104,12 +105,12 @@ impractical for many organizations wanting an internal signing service.
 
 SecureSBOM was built to focus specifically on SBOM authenticity, support CycloneDX-native signing, and provide a
 lightweight, enterprise-friendly alternative for organizations who want the benefits of signing without the
-infrastructure burden. For a more detailed compairson between SecureSBOM and Sigstore please see the
+infrastructure burden. For a more detailed comparison between SecureSBOM and Sigstore please see the
 [following](/securesbom_vs_sigstore/)
 
 {{< /faq >}}
 
-{{< faq question="What are the challenges with SBOM Signing & Verificaiton?" >}}
+{{< faq question="What are the challenges with SBOM Signing & Verification?" >}}
 
 SBOM signing and verification may seem simple on the surface, but in practice it involves several technical and
 operational challenges. These challenges are amplified in enterprise environments where accuracy, repeatability,
@@ -152,7 +153,7 @@ Verifying an SBOM manually often requires messy combinations of tooling such as:
 
 This leads to inconsistency across teams and makes it difficult to standardize verification policies.
 
-SecureSBOM offers simple online APIs, a fully offline verification tool, & numrious intrgrations with GitHub and other
+SecureSBOM offers simple online APIs, a fully offline verification tool, & numerous integrations with GitHub and other
 3rd party tools making verification consistent across environments—including air-gapped or clean-room builds.
 
 **SBOM aggregation & reuse becomes complicated without signatures**
