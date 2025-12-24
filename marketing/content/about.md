@@ -46,7 +46,3 @@ SecureSBOM consolidates all aspects of SBOM lifecycle management—from generati
 
 Ready to **secure your supply chain**?  
 [Contact us](/contactus/) to discover how SecureSBOM can elevate your SBOM strategy—and your security posture.
-
----
-
-© ShiftLeftCyber 2025. All rights reserved.

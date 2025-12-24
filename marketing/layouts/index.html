@@ -19,9 +19,6 @@
 <body>
     {{- partial "alert.html" . -}}
     {{- partial "header.html" . -}}
-    <div class="scroll-top rounded-full">
-        <span class="icon-keyboard_arrow_up text-2xl"></span>
-    </div>
     {{- partial "slide.html" . -}}
     {{- partial "strip.html" . -}}
     {{ if ne .Site.Params.showBlog false }}
@@ -30,25 +27,8 @@
         {{- partial "recent.html" . -}}
     </div>
     {{ end }}
+    {{- partial "integrations.html" . -}}
     {{- partial "footer.html" . -}}
-    <script src="{{ "/js/swiper-bundle.min.js" | relURL }}"></script>
-    <script>
-        var mySwiper = new Swiper(".swiper-container", {
-            direction: "horizontal",
-            loop: true,
-            speed: 550,
-            autoplay: {
-                delay: 6000,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
 </body>
 
 </html>
