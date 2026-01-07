@@ -18,7 +18,7 @@ googleAnalytics = "G-CR0HB4HF2K"
 
 [markup]
   [markup.goldmark]
-    [markup.renderer]
+    [markup.goldmark.renderer]
       unsafe = true
 
 [params]
