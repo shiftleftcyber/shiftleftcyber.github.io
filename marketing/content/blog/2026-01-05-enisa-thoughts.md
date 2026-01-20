@@ -2,7 +2,7 @@
 author = "Jason Smith"
 title = "Thoughts on ENISA's New SBOM Implementation Guide 🤔"
 date = "2026-01-05"
-linkedin = "https://www.linkedin.com/posts/j28smith_sbom-landscape-analysis-towards-an-implementation-activity-7414054620387393537-6hHA?utm_source=share&utm_medium=member_desktop&rcm=ACoAACKV2pcBRuHTsaPyNlOHthAchD5xLArHEmo"
+linkedin = "https://www.linkedin.com/posts/j28smith_sbom-landscape-analysis-towards-an-implementation-activity-7414054620387393537-6hHA"
 image = "img/thirdparty/2026-01-05-enisa-sbom-landscape-analysis.png"
 +++
 
