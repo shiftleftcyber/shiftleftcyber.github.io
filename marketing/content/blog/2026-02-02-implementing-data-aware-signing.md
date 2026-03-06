@@ -1,7 +1,7 @@
 +++
 author = "Jason Smith"
 title = "Implementing Data-Aware Signing"
-date = "2026-02-12"
+date = "2026-02-02"
 linkedin = "https://www.linkedin.com/posts/j28smith_sbom-openssf-supplychainsecurity-activity-7424218592931405825-MBC5"
 image = "img/thirdparty/2026-02-02-data-aware-sbom-signing.png"
 +++
