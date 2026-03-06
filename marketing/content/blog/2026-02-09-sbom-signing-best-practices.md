@@ -2,7 +2,7 @@
 author = "Jason Smith"
 title = "🚨 Call for Feedback: A Standardized Approach to SBOM Signing"
 date = "2026-02-09"
-linkedin = ""
+linkedin = "https://www.linkedin.com/posts/j28smith_openssf-sbom-supplychainsecurity-activity-7426752007064985600-5cMX"
 image = "img/thirdparty/2026-02-09-sbom-signing-best-practices.png"
 +++
 
