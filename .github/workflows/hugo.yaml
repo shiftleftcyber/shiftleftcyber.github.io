@@ -8,6 +8,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: read
   pages: write
@@ -36,22 +39,22 @@ jobs:
       TZ: America/Toronto
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           submodules: recursive
           fetch-depth: 0
       - name: Setup Go
-        uses: actions/setup-go@v6
+        uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
           go-version: ${{ env.GO_VERSION }}
           cache: false
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - name: Create directory for user-specific executable files
         run: |
           mkdir -p "${HOME}/.local"
@@ -82,7 +85,7 @@ jobs:
           git config core.quotepath false
       - name: Cache restore
         id: cache-restore
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: ${{ runner.temp }}/hugo_cache
           key: hugo-${{ github.run_id }}
@@ -97,30 +100,30 @@ jobs:
             --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Cache save
         id: cache-save
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: ${{ runner.temp }}/hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: ./marketing/public
       - name: Generate CycloneDX SBOM
         run: npx @cyclonedx/cyclonedx-npm --output-format JSON --output-file shiftleftcyber.github.io.cdx.json
       - name: Upload SBOM
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a #v7.0.1
         with:
           name: generated-sbom
           path: ./marketing/shiftleftcyber.github.io.cdx.json
       - name: Sign SBOM
-        uses: shiftleftcyber/secure-sbom-action@v1.3.1
+        uses: shiftleftcyber/secure-sbom-action@542dffaadd81bc0614947d749720558a399e6454 # v2.4.0
         with:
-          sbom_file: ./marketing/shiftleftcyber.github.io.cdx.json
-          secure_sbom_action: sign
-          api_key: ${{ secrets.SECURE_SBOM_API_KEY }}
-          key_id: ${{ secrets.SECURE_SBOM_KEYID }}
+          sbom_file: marketing/shiftleftcyber.github.io.cdx.json
+          secure_sbom_action: sign_sbom
+          secure_sbom_api_key: ${{ secrets.SECURE_SBOM_API_KEY }}
+          secure_sbom_signing_key_id: ${{ vars.SECURE_SBOM_SIGNING_KEY_ID }}
       - name: Upload Signed SBOM
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a #v7.0.1
         with:
           name: signed-sbom
           path: ./marketing/shiftleftcyber.github.io.cdx.signed.json
@@ -136,4 +139,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
