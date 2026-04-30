@@ -140,7 +140,7 @@ function normalizeText(value) {
 }
 
 function linkifyBareUrls(line) {
-  return line.replace(/(^|[\s(])((https?:\/\/)[^\s<>()\]]+[^\s<>().,\];:'"!?”’])/g, (match, prefix, url) => {
+  return line.replace(/(^|[\s(])((https?:\/\/)[^\s<>()\]]+[^\s<>().,;\]:'"!?…”’])/g, (match, prefix, url) => {
     const beforeUrl = line.slice(0, line.indexOf(match) + prefix.length);
 
     if (beforeUrl.endsWith("](") || beforeUrl.endsWith('"') || beforeUrl.endsWith("'")) {
