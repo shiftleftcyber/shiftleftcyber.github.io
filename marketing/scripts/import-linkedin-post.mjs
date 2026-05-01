@@ -88,7 +88,7 @@ function validateArgs(args) {
   }
 
   if (!/^https:\/\/(www\.)?linkedin\.com\//.test(args.url)) {
-    throw new Error("--url must be a LinkedIn URL beginning with https://www.linkedin.com/");
+    throw new Error("--url must be a LinkedIn URL beginning with https://www.linkedin.com/ or https://linkedin.com/");
   }
 
   if (!/^\d{4}-\d{2}-\d{2}$/.test(args.date)) {
@@ -140,7 +140,7 @@ function normalizeText(value) {
 }
 
 function linkifyBareUrls(line) {
-  return line.replace(/(^|[\s(])((https?:\/\/)[^\s<>()\]]+[^\s<>().,\];:'"!?”’])/g, (match, prefix, url) => {
+  return line.replace(/(^|[\s(])((https?:\/\/)[^\s<>()\]]+[^\s<>().,;\]:'"!?…”’])/g, (match, prefix, url) => {
     const beforeUrl = line.slice(0, line.indexOf(match) + prefix.length);
 
     if (beforeUrl.endsWith("](") || beforeUrl.endsWith('"') || beforeUrl.endsWith("'")) {
