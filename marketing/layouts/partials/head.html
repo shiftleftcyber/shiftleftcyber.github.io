@@ -9,21 +9,21 @@
 {{ if .Site.Params.icon.fontawesome }}
 <link href='{{ "/css/fa6.min.css" | relURL }}' rel="stylesheet" type="text/css">
 {{ end }}
-{{ $styles := resources.Get "css/style.css" | postCSS }}
+{{ $styles := resources.Get "css/style.css" }}
 {{ if hugo.IsServer }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 {{ else }}
-{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+{{ $styles := $styles | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 {{ end }}
 {{ if .IsHome }}
 <link rel="stylesheet" href='{{ "/css/swiper-bundle.min.css" | relURL }}'>
 {{ end }}
 <link href='{{ "/css/style.min.css" | relURL }}' rel="stylesheet" type="text/css">
-{{ $custom := resources.Get "css/custom.css" | postCSS }}
+{{ $custom := resources.Get "css/custom.css" }}
 {{ if hugo.IsServer }}
 <link rel="stylesheet" href="{{ $custom.RelPermalink }}" />
 {{ else }}
-{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+{{ $custom := $custom | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $custom.RelPermalink }}" />
 {{ end }}

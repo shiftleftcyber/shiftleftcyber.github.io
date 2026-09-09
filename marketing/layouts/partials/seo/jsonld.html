@@ -1,0 +1,33 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ShiftLeftCyber",
+  "url": "{{ .Site.BaseURL }}",
+  "sameAs": [
+    "https://github.com/shiftleftcyber"
+  ]
+}
+</script>
+{{ if eq .RelPermalink "/securesbom/" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SecureSBOM",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Web, API, CI/CD",
+  "description": "SBOM signing and verification platform for software supply chain security.",
+  "url": "{{ .Permalink }}",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://app.securesbom.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ShiftLeftCyber",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+{{ end }}

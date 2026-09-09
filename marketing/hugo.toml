@@ -25,6 +25,7 @@ googleAnalytics = "G-CR0HB4HF2K"
 
   showBlog = true
   mainSections = ['blog']
+  description = "ShiftLeftCyber builds SBOM, AI-BOM, and software supply chain security tools for signing, verification, compliance, and audit-ready transparency."
 
   googleFonts = true
 
@@ -44,28 +45,34 @@ googleAnalytics = "G-CR0HB4HF2K"
     fontawesome = true
 
   [params.homepage_meta_tags]
-    meta_description = "ShiftLeftCyber helps manage Software Bill of Materials (SBOM) with compliance-focused solutions, enhancing cyber resilience."
-    meta_og_title = "ShiftLeftCyber"
+    meta_description = "ShiftLeftCyber builds SBOM, AI-BOM, and software supply chain security tools for signing, verification, compliance, and audit-ready transparency."
+    meta_og_title = "ShiftLeftCyber | SBOM, AI-BOM, and Software Supply Chain Security"
     meta_og_type = "website"
     meta_og_url = "https://shiftleftcyber.io"
     meta_og_image = "https://shiftleftcyber.io/img/high-res/metaimage.jpg"
-    meta_og_description = "Discover our innovative solutions and read our latest insights on our blog."
+    meta_og_description = "SecureSBOM helps teams sign and verify SBOMs, while AI-BOM documents AI software supply chains with structured, machine-readable metadata."
     meta_og_author = "ShiftLeftCyber"
-    meta_og_keywords = "SBOM, Software Bill of Materials, compliance, security, audit-ready reporting, cyber resilience, CycloneDX, SPDX"
+    meta_og_keywords = "SBOM, AI-BOM, SecureSBOM, SBOM signing, SBOM verification, software supply chain security, CISA SBOM minimum elements, NTIA SBOM, CycloneDX, SPDX, author signature, AI supply chain, software bill of materials"
 
 [menu]
 
   [[menu.main]]
     identifier = "securesbom"
-    name = "SBOM Signing FAQ"
-    url = "/faq/"
+    name = "SecureSBOM"
+    url = "/securesbom/"
     weight = 1
 
   [[menu.main]]
-    identifier = "securesbom_vs_sigstore"
-    name = "SecureSBOM vs Sigstore"
-    url = "/securesbom_vs_sigstore/"
+    identifier = "ai-bom"
+    name = "AI-BOM"
+    url = "/ai-bom/"
     weight = 2
+
+  [[menu.main]]
+    identifier = "faq"
+    name = "FAQ"
+    url = "/faq/"
+    weight = 3
 
   # ToDo - Add this back in when we have a better grasp of our professional services
   #[[menu.main]]
@@ -78,19 +85,28 @@ googleAnalytics = "G-CR0HB4HF2K"
     identifier = "blog"
     name = "Blog"
     url = "/blog/"
-    weight = 4
+    weight = 5
 
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 5
+    weight = 6
 
   [[menu.main]]
     identifier = "contact"
     name = "Contact"
     url = "/contactus/"
-    weight = 6
+    weight = 7
+
+  [[menu.main]]
+    identifier = "portal"
+    name = "Portal"
+    url = "https://app.securesbom.com/"
+    weight = 8
+    [menu.main.params]
+      button = true
+      external = true
 
   # Footer Menu
   [[menu.footer]]
