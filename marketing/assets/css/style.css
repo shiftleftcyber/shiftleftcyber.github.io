@@ -1575,10 +1575,6 @@ video {
   padding: 0.5rem;
 }
 
-.p-3 {
-  padding: 0.75rem;
-}
-
 .p-4 {
   padding: 1rem;
 }
@@ -1856,10 +1852,6 @@ video {
 
 .duration-500 {
   transition-duration: 500ms;
-}
-
-.\[oaicite\:6\] {
-  oaicite: 6;
 }
 
 @media (min-width: 768px) {

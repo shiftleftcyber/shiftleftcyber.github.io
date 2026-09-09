@@ -74,13 +74,6 @@ googleAnalytics = "G-CR0HB4HF2K"
     url = "/faq/"
     weight = 3
 
-  # ToDo - Add this back in when we have a better grasp of our professional services
-  #[[menu.main]]
-  #  identifier = "products"
-  #  name = "Products & Services"
-  #  url = "/products/"
-  #  weight = 2
-
   [[menu.main]]
     identifier = "blog"
     name = "Blog"

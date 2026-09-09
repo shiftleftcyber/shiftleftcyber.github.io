@@ -1,14 +1,17 @@
 ---
-title: "SecureSBOM - SBOM Signing FAQ"
-description: "Cryptographic signing and verification of Software Bill of Materials (SBOMs) for trusted supply chain security. Ensure authenticity, integrity, and compliance."
-date: 2025-12-08
+title: "SecureSBOM FAQ"
+description: "Answers to common questions about SecureSBOM, SBOM signing, verification, threat models, enterprise privacy, and trusted software supply chain evidence."
+date: 2026-09-09
 layout: "single"
+keywords: ["SecureSBOM FAQ", "SBOM signing", "SBOM verification", "software supply chain security", "CycloneDX signing", "SPDX signing", "author signature"]
 ---
 
 A collection of common questions about how SecureSBOM works, how it integrates into your software
 supply chain, and what makes it different from existing signing solutions.
 
 ---
+
+## SBOM Signing Basics
 
 {{< faq question="What is SBOM Signing?" >}}
 
@@ -46,6 +49,8 @@ enabling organizations to safely assemble, reuse, and distribute SBOMs at scale.
 
 {{< /faq >}}
 
+## Trust and Threat Model
+
 {{< faq question="What is the Threat Model for SBOMs?" >}}
 
 SBOMs sit at the center of an organization’s component inventory, vulnerability management workflows,
@@ -64,6 +69,8 @@ SecureSBOM addresses these threats by ensuring every SBOM can be cryptographical
 trusted key, and checked for unauthorized modification before it is used in any security or compliance workflow.
 
 {{< /faq >}}
+
+## SecureSBOM
 
 {{< faq question="What is SecureSBOM?" >}}
 
@@ -108,6 +115,8 @@ lightweight, enterprise-friendly alternative for organizations who want the bene
 infrastructure burden. For more detail, see the [Sigstore comparison](/securesbom/sigstore-comparison/).
 
 {{< /faq >}}
+
+## Implementation Challenges
 
 {{< faq question="What are the challenges with SBOM Signing & Verification?" >}}
 
