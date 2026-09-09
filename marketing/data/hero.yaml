@@ -1,0 +1,17 @@
+eyebrow: "SecureSBOM portal"
+title: "Trust the SBOM before you trust the software."
+description: "Sign and verify SBOMs with managed key infrastructure, CI/CD integrations, offline verification, and audit-ready evidence for modern software supply chain programs."
+image: "/img/thirdparty/2026-03-16-convergence-in-sbom-signing.png"
+alt: "Abstract visualization for SBOM signing convergence"
+primary_label: "Open SecureSBOM Portal"
+primary_link: "https://app.securesbom.com/"
+primary_external: true
+secondary_label: "Explore AI-BOM"
+secondary_link: "/ai-bom/"
+proof_points:
+  - title: "SBOM Author Signature"
+    description: "Support the trust expectations emerging in the 2026 SBOM minimum elements."
+  - title: "Managed Key Infrastructure"
+    description: "Avoid spreading private signing keys across build systems and developer machines."
+  - title: "Offline Verification"
+    description: "Verify signed SBOMs in customer, regulated, and air-gapped workflows."

@@ -32,9 +32,12 @@
     }
     toggleNav();
 
-    document.querySelector('.scroll-top').addEventListener('click', () => {
-      document.documentElement.scrollTop = 0;
-    });
+    var scrollTop = document.querySelector('.scroll-top');
+    if (scrollTop) {
+      scrollTop.addEventListener('click', () => {
+        document.documentElement.scrollTop = 0;
+      });
+    }
   </script>
   {{ if .Site.Params.googleFonts }}
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
