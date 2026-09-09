@@ -13,16 +13,17 @@
       "target": "_blank"
     },
     {
-      "title": "Enterprise-Ready Architecture",
-      "description": "Multi-tenant, compliance-ready design that scales to regulated industries and large organizations",
-      "icon": "fas fa-building",
-      "link": "/securesbom/"
+      "title": "AI-BOM for AI Supply Chains",
+      "description": "Describe AI models, datasets, infrastructure, relationships, and security metadata with a practical JSON Schema.",
+      "icon": "fas fa-diagram-project",
+      "link": "/ai-bom/"
     },
     {
       "title": "Seamless CI/CD Integration",
       "description": "API-first design enables easy drop-in integration with existing DevSecOps pipelines (GitHub, GitLab, Jenkins, Bitbucket).",
       "icon": "fab fa-github",
-      "link": "https://github.com/shiftleftcyber/secure-sbom-action"
+      "link": "https://github.com/shiftleftcyber/secure-sbom-action",
+      "target": "_blank"
     },
     {
       "title": "Secure Key Management (Cloud & On-Prem HSM)",
