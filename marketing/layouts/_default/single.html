@@ -29,6 +29,12 @@
 <meta property="twitter:description" content="{{ .Site.Params.description }}" />
 {{- end }}
 
+{{- with .Keywords }}
+<meta name="keywords" content="{{ delimit . ", " }}" />
+{{- end }}
+
+{{ partial "seo/jsonld.html" . }}
+
 {{ end }}
 
 {{ define "main" }}

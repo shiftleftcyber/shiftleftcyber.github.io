@@ -1,8 +1,20 @@
 ---
 title: "SecureSBOM"
-description: "SecureSBOM signs and verifies Software Bills of Materials with managed key infrastructure, API-first workflows, and support for modern SBOM compliance expectations."
+description: "SecureSBOM signs and verifies Software Bills of Materials with managed key infrastructure, CI/CD integrations, offline verification, and support for 2026 SBOM minimum element expectations including SBOM Author Signature."
 date: 2025-08-19
+lastmod: 2026-09-09
 layout: "single"
+keywords:
+  - SecureSBOM
+  - SBOM signing
+  - SBOM verification
+  - SBOM Author Signature
+  - CISA 2026 SBOM minimum elements
+  - NTIA SBOM minimum elements
+  - CycloneDX signing
+  - SPDX verification
+  - software supply chain security
+  - managed key infrastructure
 ---
 
 <section class="not-prose bg-gray-50 border border-gray-200 p-6 md:p-10 mb-10">
@@ -49,7 +61,7 @@ SecureSBOM focuses on the trust layer around SBOMs:
   <h2 class="text-3xl mt-2 mb-3">Author signatures are now part of the baseline conversation.</h2>
   <p class="sans text-gray-800 mb-4">The July 29, 2026 CISA, NSA, FBI, and international partner update to the SBOM minimum elements adds <strong>SBOM Author Signature</strong> as a new element, along with SBOM version, tool metadata, component hashes, and component license data.</p>
   <p class="sans text-gray-800 mb-4">That matters because SBOM programs are moving beyond inventory. Buyers and operators increasingly need evidence that the SBOM came from the claimed author and was not changed after generation.</p>
-  <a class="inline-block text-blue-800 underline" href="https://media.defense.gov/2026/Jul/29/2003971159/-1/-1/1/CSI_2026_cisa_sbom_minimum_elements_508c.PDF" target="_blank" rel="noopener noreferrer">Read the 2026 minimum elements</a>
+  <a class="inline-block text-blue-800 underline" href="https://www.cisa.gov/sites/default/files/2026-07/2026_cisa_sbom_minimum_elements_508c.pdf" target="_blank" rel="noopener noreferrer">Read the 2026 minimum elements</a>
 </section>
 
 ## How It Works
@@ -103,6 +115,20 @@ SecureSBOM focuses on the trust layer around SBOMs:
     <p class="sans text-gray-700">Retain verification-friendly records that help answer customer, regulator, and incident-response questions.</p>
   </div>
 </div>
+
+## Common Questions
+
+### What is SBOM Author Signature?
+
+SBOM Author Signature is metadata that helps verify who authored an SBOM and whether the document has changed since it was signed.
+
+### Why sign an SBOM?
+
+Signing turns an SBOM from an inventory claim into evidence that can be verified before it is used for vulnerability management, procurement, compliance, or incident response.
+
+### How does SecureSBOM support the 2026 SBOM minimum elements?
+
+SecureSBOM focuses on the signature and verification layer around SBOM programs, including author signature workflows, managed key protection, and repeatable online or offline verification.
 
 ## Compare Approaches
 
