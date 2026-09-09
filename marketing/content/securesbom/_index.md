@@ -13,7 +13,7 @@ layout: "single"
 
 SecureSBOM provides **cryptographic signing and verification** of your Software Bill of Materials, ensuring **authenticity, integrity, and compliance** across your entire software lifecycle.
 
-**[Request Demo](/contactus/?type=demo)** | **[Get API Access](/contactus/?type=api)** | **[Contact Sales](/contactus/?type=sales)**
+**[Open the SecureSBOM Portal](https://app.securesbom.com/)** | **[Request Demo](/contactus/?type=demo)** | **[Contact Sales](/contactus/?type=sales)**
 
 ---
 
@@ -108,17 +108,25 @@ SecureSBOM provides **cryptographic signing and verification** of your Software 
 
 ---
 
+## Compare Approaches
+
+Sigstore is strong for open-source and OCI-centered signing workflows. SecureSBOM is built for SBOM-specific enterprise signing and verification, including private signing activity, managed key infrastructure, and standards-aligned SBOM handling.
+
+Learn more in the [Sigstore comparison](/securesbom/sigstore-comparison/).
+
+---
+
 ## Get Started Today
 
-### 🎯 Request a Demo
+### 🎯 Start in the Portal
+
+Create an account, manage access, and begin using SecureSBOM through the self-service portal.
+**[Open SecureSBOM Portal](https://app.securesbom.com/)**
+
+### 🔑 Request a Demo
 
 See SecureSBOM in action with your actual SBOMs
 **[Schedule Demo](/contactus/?type=demo)**
-
-### 🔑 Get API Access
-
-Start integrating SBOM signing into your workflows
-**[Request API Key](/contactus/?type=api)**
 
 ### 💬 Talk to Sales
 

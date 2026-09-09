@@ -105,8 +105,7 @@ impractical for many organizations wanting an internal signing service.
 
 SecureSBOM was built to focus specifically on SBOM authenticity, support CycloneDX-native signing, and provide a
 lightweight, enterprise-friendly alternative for organizations who want the benefits of signing without the
-infrastructure burden. For a more detailed comparison between SecureSBOM and Sigstore please see the
-[following](/securesbom_vs_sigstore/)
+infrastructure burden. For more detail, see the [Sigstore comparison](/securesbom/sigstore-comparison/).
 
 {{< /faq >}}
 
@@ -208,15 +207,15 @@ improves trust, reduces operational friction, and strengthens software supply ch
 
 ## Get Started Today
 
-### 🎯 Request a Demo
+### 🎯 Start in the Portal
+
+Create an account, manage access, and begin using SecureSBOM through the self-service portal.
+**[Open SecureSBOM Portal](https://app.securesbom.com/)**
+
+### 🔑 Request a Demo
 
 See SecureSBOM in action with your actual SBOMs
 **[Schedule Demo](/contactus/?type=demo)**
-
-### 🔑 Get API Access
-
-Start integrating SBOM signing into your workflows
-**[Request API Key](/contactus/?type=api)**
 
 ### 💬 Talk to Sales
 
