@@ -205,23 +205,6 @@ improves trust, reduces operational friction, and strengthens software supply ch
 
 ---
 
-## Get Started Today
-
-### 🎯 Start in the Portal
-
-Create an account, manage access, and begin using SecureSBOM through the self-service portal.
-**[Open SecureSBOM Portal](https://app.securesbom.com/)**
-
-### 🔑 Request a Demo
-
-See SecureSBOM in action with your actual SBOMs
-**[Schedule Demo](/contactus/?type=demo)**
-
-### 💬 Talk to Sales
-
-Discuss enterprise features and custom solutions
-**[Contact Sales](/contactus/?type=sales)**
-
----
+{{< securesbom-cta >}}
 
 **Questions?** Our security experts are here to help. [Contact our team](/contactus/) to learn how SecureSBOM can transform your software supply chain security.
