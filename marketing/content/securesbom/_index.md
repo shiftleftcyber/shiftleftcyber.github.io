@@ -132,6 +132,11 @@ SecureSBOM focuses on the signature and verification layer around SBOM programs,
 
 ## Compare Approaches
 
+SLSA and SecureSBOM provide complementary evidence. SLSA establishes provenance for the software build, while
+SecureSBOM protects the authenticity and integrity of the SBOM distributed with it.
+
+See how they work together in [SLSA and SecureSBOM](/securesbom/slsa-and-securesbom/).
+
 Sigstore is strong for open-source and OCI-centered signing workflows. SecureSBOM is built for SBOM-specific enterprise signing and verification, including private signing activity, managed key infrastructure, and standards-aligned SBOM handling.
 
 Learn more in the [Sigstore comparison](/securesbom/sigstore-comparison/).
