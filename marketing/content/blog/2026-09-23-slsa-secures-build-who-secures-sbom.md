@@ -1,5 +1,4 @@
 +++
-author = "Jason Smith"
 title = "SLSA Secures the Build. Who Secures the SBOM?"
 date = "2026-09-23"
 description = "SLSA provides verifiable build provenance. SecureSBOM protects the authenticity and integrity of the SBOM delivered with the software."
