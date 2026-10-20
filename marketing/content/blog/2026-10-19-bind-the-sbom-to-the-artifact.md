@@ -21,6 +21,31 @@ build the rest of that AWS architecture.
 
 The key idea is simple: **sign the relationship between the SBOM and the artifact, not only the SBOM.**
 
+## What Is an Attestation?
+
+Attestation is still a new term for many software teams. In plain language:
+
+> **An attestation is a verifiable, signed claim about an identified subject.**
+
+An attestation brings four pieces together:
+
+- **Subject:** The thing the claim is about, such as a container image identified by an immutable digest.
+- **Claim:** What the signer asserts about that subject.
+- **Evidence:** The information supporting the claim, either contained in or referenced by the attestation.
+- **Trust mechanism:** The signature and signing identity that let a verifier determine who made the claim and whether
+  it was altered.
+
+For an artifact-bound SBOM attestation, the example is concrete:
+
+- **Subject:** The exact container image identified by its SHA-256 manifest digest.
+- **Claim:** "This SBOM describes this container image."
+- **Evidence:** The CycloneDX SBOM containing the image's components and dependency relationships.
+- **Trust mechanism:** The signature over the complete statement, including both the image digest and the SBOM.
+
+That final boundary matters. A valid attestation proves that the identified signer made the claim, that the signed claim
+has not changed, and that it names a particular artifact. It does not automatically prove that the claim is true or that
+the SBOM is complete. The quality of the evidence and the authority of the signer must still be evaluated.
+
 ## What AWS Is Doing
 
 AWS begins with a CycloneDX SBOM generated for a container image addressed by its immutable manifest digest. It then
@@ -80,8 +105,8 @@ It helps to separate the three properties involved:
 
 | Control | What it proves | What it does not prove |
 |---|---|---|
-| SBOM signature | The signed SBOM content is authentic and unchanged | The SBOM belongs to the artifact in front of the verifier |
-| Signed artifact digest in the attestation | The SBOM claim is bound to one immutable artifact | Where the attestation is stored or how it is found |
+| SBOM signature | The SBOM is authentic and unchanged | The SBOM belongs to the artifact being verified |
+| Signed subject digest | The claim is bound to one immutable artifact | Where the attestation is stored or found |
 | OCI referrer | The registry can discover related metadata beside an image | That the relationship is trustworthy |
 
 AWS combines all three. SecureSBOM already has the first control. The next useful version should add the second and
