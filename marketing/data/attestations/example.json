@@ -1,0 +1,133 @@
+{
+  "_comment": "Real SecureSBOM sign/verify round trip (predicate_signature: none, demo attestation key). Shared by the /attestations guide and, later, the self-service verifier.",
+  "key_id": "18b9c0d9-947c-47cf-b1e6-ad548cdb7d85",
+  "public_key": {
+    "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAElJGSTtEzG0kI9WJgYDXRRH3CAZMV\njqr+HUs/3kqFdjE+sFAjYjEVZ06zqqTJKoOF92HhPNh9r9su0VaH9zXO3w==\n-----END PUBLIC KEY-----\n",
+    "public_key_jwk": {
+      "kty": "EC",
+      "crv": "P-256",
+      "x": "lJGSTtEzG0kI9WJgYDXRRH3CAZMVjqr-HUs_3kqFdjE",
+      "y": "PrBQI2IxFWdOs6qkySqDhfdh4TzYfa_bLtFWh_c1zt8"
+    },
+    "endpoint": "GET /api/v1/public/keys/{key_id}"
+  },
+  "subject_digest": "a3f5c1d2e4b6a7980f1e2d3c4b5a69788796a5b4c3d2e1f00112233445566778",
+  "sign_request": {
+    "key_id": "18b9c0d9-947c-47cf-b1e6-ad548cdb7d85",
+    "subject": [
+      {
+        "name": "registry.example.com/app",
+        "digest": {
+          "sha256": "a3f5c1d2e4b6a7980f1e2d3c4b5a69788796a5b4c3d2e1f00112233445566778"
+        }
+      }
+    ],
+    "sbom": {
+      "bomFormat": "CycloneDX",
+      "specVersion": "1.6",
+      "serialNumber": "urn:uuid:123e4567-e89b-12d3-a456-426614174000",
+      "version": 1,
+      "metadata": {
+        "timestamp": "2024-10-22T12:00:00Z",
+        "tools": [
+          {
+            "vendor": "ACME Corp",
+            "name": "SBOM Generator",
+            "version": "1.0.0"
+          }
+        ],
+        "component": {
+          "type": "application",
+          "name": "Example Application",
+          "version": "1.0.0"
+        }
+      },
+      "components": [
+        {
+          "type": "library",
+          "name": "example-library",
+          "version": "2.0.0",
+          "purl": "pkg:maven/org.example/example-library@2.0.0",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ]
+        }
+      ],
+      "dependencies": [
+        {
+          "ref": "pkg:maven/org.example/example-library@2.0.0",
+          "dependsOn": []
+        }
+      ]
+    },
+    "predicate_signature": "none"
+  },
+  "sign_response": {
+    "attestation": {
+      "payloadType": "application/vnd.in-toto+json",
+      "payload": "eyJfdHlwZSI6Imh0dHBzOi8vaW4tdG90by5pby9TdGF0ZW1lbnQvdjEiLCJwcmVkaWNhdGUiOnsiYm9tRm9ybWF0IjoiQ3ljbG9uZURYIiwiY29tcG9uZW50cyI6W3sibGljZW5zZXMiOlt7ImxpY2Vuc2UiOnsiaWQiOiJNSVQifX1dLCJuYW1lIjoiZXhhbXBsZS1saWJyYXJ5IiwicHVybCI6InBrZzptYXZlbi9vcmcuZXhhbXBsZS9leGFtcGxlLWxpYnJhcnlAMi4wLjAiLCJ0eXBlIjoibGlicmFyeSIsInZlcnNpb24iOiIyLjAuMCJ9XSwiZGVwZW5kZW5jaWVzIjpbeyJkZXBlbmRzT24iOltdLCJyZWYiOiJwa2c6bWF2ZW4vb3JnLmV4YW1wbGUvZXhhbXBsZS1saWJyYXJ5QDIuMC4wIn1dLCJtZXRhZGF0YSI6eyJjb21wb25lbnQiOnsibmFtZSI6IkV4YW1wbGUgQXBwbGljYXRpb24iLCJ0eXBlIjoiYXBwbGljYXRpb24iLCJ2ZXJzaW9uIjoiMS4wLjAifSwidGltZXN0YW1wIjoiMjAyNC0xMC0yMlQxMjowMDowMFoiLCJ0b29scyI6W3sibmFtZSI6IlNCT00gR2VuZXJhdG9yIiwidmVuZG9yIjoiQUNNRSBDb3JwIiwidmVyc2lvbiI6IjEuMC4wIn1dfSwic2VyaWFsTnVtYmVyIjoidXJuOnV1aWQ6MTIzZTQ1NjctZTg5Yi0xMmQzLWE0NTYtNDI2NjE0MTc0MDAwIiwic3BlY1ZlcnNpb24iOiIxLjYiLCJ2ZXJzaW9uIjoxfSwicHJlZGljYXRlVHlwZSI6Imh0dHBzOi8vY3ljbG9uZWR4Lm9yZy9ib20iLCJzdWJqZWN0IjpbeyJkaWdlc3QiOnsic2hhMjU2IjoiYTNmNWMxZDJlNGI2YTc5ODBmMWUyZDNjNGI1YTY5Nzg4Nzk2YTViNGMzZDJlMWYwMDExMjIzMzQ0NTU2Njc3OCJ9LCJuYW1lIjoicmVnaXN0cnkuZXhhbXBsZS5jb20vYXBwIn1dfQ==",
+      "signatures": [
+        {
+          "keyid": "18b9c0d9-947c-47cf-b1e6-ad548cdb7d85",
+          "sig": "MEYCIQCE+A7hS7fsOWfTw/3ocAn5dkfFcPGPfP+N1eh8uEk+ygIhAN8qKyKgWpz2eJ3hyBdoWns7fS6lzSQW4Z3SoDtSiECH"
+        }
+      ]
+    },
+    "media_type": "application/vnd.dsse.envelope.v1+json",
+    "predicate_type": "https://cyclonedx.org/bom",
+    "predicate_signature": {
+      "mode": "none"
+    },
+    "subject": [
+      {
+        "name": "registry.example.com/app",
+        "digest": {
+          "sha256": "a3f5c1d2e4b6a7980f1e2d3c4b5a69788796a5b4c3d2e1f00112233445566778"
+        }
+      }
+    ],
+    "key_id": "18b9c0d9-947c-47cf-b1e6-ad548cdb7d85",
+    "algorithm": "ES256",
+    "statement_sha256": "cfa18e44c2f079bc3f68926ae04859a857e14a3e5f694562289b438c9d16b09b"
+  },
+  "verify_request": {
+    "key_id": "18b9c0d9-947c-47cf-b1e6-ad548cdb7d85",
+    "attestation": {
+      "payloadType": "application/vnd.in-toto+json",
+      "payload": "eyJfdHlwZSI6Imh0dHBzOi8vaW4tdG90by5pby9TdGF0ZW1lbnQvdjEiLCJwcmVkaWNhdGUiOnsiYm9tRm9ybWF0IjoiQ3ljbG9uZURYIiwiY29tcG9uZW50cyI6W3sibGljZW5zZXMiOlt7ImxpY2Vuc2UiOnsiaWQiOiJNSVQifX1dLCJuYW1lIjoiZXhhbXBsZS1saWJyYXJ5IiwicHVybCI6InBrZzptYXZlbi9vcmcuZXhhbXBsZS9leGFtcGxlLWxpYnJhcnlAMi4wLjAiLCJ0eXBlIjoibGlicmFyeSIsInZlcnNpb24iOiIyLjAuMCJ9XSwiZGVwZW5kZW5jaWVzIjpbeyJkZXBlbmRzT24iOltdLCJyZWYiOiJwa2c6bWF2ZW4vb3JnLmV4YW1wbGUvZXhhbXBsZS1saWJyYXJ5QDIuMC4wIn1dLCJtZXRhZGF0YSI6eyJjb21wb25lbnQiOnsibmFtZSI6IkV4YW1wbGUgQXBwbGljYXRpb24iLCJ0eXBlIjoiYXBwbGljYXRpb24iLCJ2ZXJzaW9uIjoiMS4wLjAifSwidGltZXN0YW1wIjoiMjAyNC0xMC0yMlQxMjowMDowMFoiLCJ0b29scyI6W3sibmFtZSI6IlNCT00gR2VuZXJhdG9yIiwidmVuZG9yIjoiQUNNRSBDb3JwIiwidmVyc2lvbiI6IjEuMC4wIn1dfSwic2VyaWFsTnVtYmVyIjoidXJuOnV1aWQ6MTIzZTQ1NjctZTg5Yi0xMmQzLWE0NTYtNDI2NjE0MTc0MDAwIiwic3BlY1ZlcnNpb24iOiIxLjYiLCJ2ZXJzaW9uIjoxfSwicHJlZGljYXRlVHlwZSI6Imh0dHBzOi8vY3ljbG9uZWR4Lm9yZy9ib20iLCJzdWJqZWN0IjpbeyJkaWdlc3QiOnsic2hhMjU2IjoiYTNmNWMxZDJlNGI2YTc5ODBmMWUyZDNjNGI1YTY5Nzg4Nzk2YTViNGMzZDJlMWYwMDExMjIzMzQ0NTU2Njc3OCJ9LCJuYW1lIjoicmVnaXN0cnkuZXhhbXBsZS5jb20vYXBwIn1dfQ==",
+      "signatures": [
+        {
+          "keyid": "18b9c0d9-947c-47cf-b1e6-ad548cdb7d85",
+          "sig": "MEYCIQCE+A7hS7fsOWfTw/3ocAn5dkfFcPGPfP+N1eh8uEk+ygIhAN8qKyKgWpz2eJ3hyBdoWns7fS6lzSQW4Z3SoDtSiECH"
+        }
+      ]
+    },
+    "expected_digest": {
+      "sha256": "a3f5c1d2e4b6a7980f1e2d3c4b5a69788796a5b4c3d2e1f00112233445566778"
+    }
+  },
+  "verify_response": {
+    "verified": true,
+    "key_id": "18b9c0d9-947c-47cf-b1e6-ad548cdb7d85",
+    "algorithm": "ES256",
+    "key_type": "attestation",
+    "predicate_type": "https://cyclonedx.org/bom",
+    "matched_subject": {
+      "name": "registry.example.com/app",
+      "digest": {
+        "sha256": "a3f5c1d2e4b6a7980f1e2d3c4b5a69788796a5b4c3d2e1f00112233445566778"
+      }
+    },
+    "checks": {
+      "signature": "valid",
+      "payload_canonical": "valid",
+      "subject_match": "valid",
+      "predicate_signature": "not_present"
+    },
+    "statement_sha256": "cfa18e44c2f079bc3f68926ae04859a857e14a3e5f694562289b438c9d16b09b"
+  }
+}

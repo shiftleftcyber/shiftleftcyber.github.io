@@ -63,16 +63,22 @@ googleAnalytics = "G-CR0HB4HF2K"
     weight = 1
 
   [[menu.main]]
+    identifier = "attestations"
+    name = "Attestations"
+    url = "/attestations/"
+    weight = 2
+
+  [[menu.main]]
     identifier = "ai-bom"
     name = "AI-BOM"
     url = "/ai-bom/"
-    weight = 2
+    weight = 3
 
   [[menu.main]]
     identifier = "faq"
     name = "FAQ"
     url = "/faq/"
-    weight = 3
+    weight = 4
 
   [[menu.main]]
     identifier = "blog"
