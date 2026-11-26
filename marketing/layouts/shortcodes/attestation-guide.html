@@ -3,9 +3,9 @@
 <div class="not-prose att-guide" id="attestation-guide">
 
 <section class="bg-gray-50 border border-gray-200 p-6 md:p-10 mb-10">
-  <p class="uppercase tracking-wide text-sm text-blue-700 font-semibold">Reference guide &middot; securesbom-attestation-v1</p>
-  <h2 class="text-4xl md:text-5xl mt-3 mb-4">Connect the dots from signing to verification.</h2>
-  <p class="sans text-xl text-gray-700 max-w-3xl mb-6">An attestation binds an SBOM to the exact artifact it describes. This guide walks through the four messages in that flow, shows what each field means, and lists what to check before you trust the result.</p>
+  <p class="uppercase tracking-wide text-sm text-blue-700 font-semibold">Reference guide</p>
+  <h2 class="text-4xl md:text-5xl mt-3 mb-4">From signing to verification, step by step.</h2>
+  <p class="sans text-xl text-gray-700 max-w-3xl mb-6">An attestation is a signed statement that says "this SBOM describes this exact artifact". This guide walks through the four messages involved, explains each field in plain language, and lists what to check before you trust the result.</p>
   <div class="flex flex-wrap gap-3 att-noprint">
     <a class="inline-block bg-blue-600 text-white px-5 py-3 rounded hover:bg-blue-700 duration-200" href="{{ $pdfHref }}">Download PDF</a>
     <a class="inline-block border border-blue-600 text-blue-700 px-5 py-3 rounded hover:bg-blue-50 duration-200" href="#att-live">Try it in your browser</a>
@@ -15,55 +15,55 @@
 
 <!-- ============ FLOW ============ -->
 <section class="mb-10">
-  <p class="uppercase tracking-wide text-sm text-blue-700 font-semibold">The flow</p>
+  <p class="uppercase tracking-wide text-sm text-blue-700 font-semibold">How it works</p>
   <h2 class="text-3xl mt-2 mb-3">Four messages, one chain of trust</h2>
-  <p class="sans text-lg text-gray-700 max-w-3xl mb-6">The producer signs once. Every consumer verifies with a digest they computed themselves. Select a step to open it in the explorer below.</p>
+  <p class="sans text-lg text-gray-700 max-w-3xl mb-6">The producer signs once. Each consumer checks the signature and compares the artifact they actually have with the one that was signed. Select a step to see it below.</p>
   <ol class="att-flow">
     <li><button type="button" class="att-flow-step" data-tab="sign-request">
-      <span class="att-flow-who">Producer &rarr; API</span>
+      <span class="att-flow-who">Producer &rarr; SecureSBOM</span>
       <span class="att-flow-num">1</span>
       <span class="att-flow-title">Sign request</span>
-      <span class="att-flow-desc">Attestation key, artifact name and digest, unsigned SBOM.</span>
+      <span class="att-flow-desc">Your attestation key, the artifact's name and fingerprint, and the SBOM.</span>
     </button></li>
     <li><button type="button" class="att-flow-step" data-tab="sign-response">
-      <span class="att-flow-who">API &rarr; Producer</span>
+      <span class="att-flow-who">SecureSBOM &rarr; Producer</span>
       <span class="att-flow-num">2</span>
       <span class="att-flow-title">Sign response</span>
-      <span class="att-flow-desc">A DSSE envelope wrapping a canonical in-toto Statement.</span>
+      <span class="att-flow-desc">The signed attestation, ready to publish next to the artifact.</span>
     </button></li>
     <li><button type="button" class="att-flow-step" data-tab="verify-request">
-      <span class="att-flow-who">Consumer &rarr; API</span>
+      <span class="att-flow-who">Consumer &rarr; SecureSBOM</span>
       <span class="att-flow-num">3</span>
       <span class="att-flow-title">Verify request</span>
-      <span class="att-flow-desc">The envelope, unchanged, plus the digest of the artifact in hand.</span>
+      <span class="att-flow-desc">The attestation, unchanged, plus the fingerprint of the artifact you have.</span>
     </button></li>
     <li><button type="button" class="att-flow-step" data-tab="verify-response">
-      <span class="att-flow-who">API &rarr; Consumer</span>
+      <span class="att-flow-who">SecureSBOM &rarr; Consumer</span>
       <span class="att-flow-num">4</span>
       <span class="att-flow-title">Verify response</span>
-      <span class="att-flow-desc">A verdict plus the result of each individual check.</span>
+      <span class="att-flow-desc">A yes or no, plus the result of each check.</span>
     </button></li>
   </ol>
 
   <div class="att-layers">
-    <p class="att-layers-title">What is inside the attestation</p>
+    <p class="att-layers-title">What is inside an attestation</p>
     <div class="att-layer att-layer-1">
-      <span class="att-layer-name">DSSE envelope</span>
-      <span class="att-layer-note"><code>payloadType</code>, <code>payload</code> (base64), <code>signatures[]</code>. The ES256 signature covers the PAE: <code>DSSEv1 &lt;len&gt; &lt;type&gt; &lt;len&gt; &lt;payload&gt;</code></span>
+      <span class="att-layer-name">Signed envelope</span>
+      <span class="att-layer-note">A small JSON wrapper holding the signed content (<code>payload</code>), its type label (<code>payloadType</code>) and the signature (<code>signatures</code>). The signature covers the content and its type label together.</span>
       <div class="att-layer att-layer-2">
-        <span class="att-layer-name">in-toto Statement v1 <small>(RFC 8785 canonical JSON)</small></span>
-        <span class="att-layer-note"><code>_type</code>, <code>predicateType</code></span>
+        <span class="att-layer-name">Statement</span>
+        <span class="att-layer-note">The signed content: "this SBOM describes this artifact". It is stored in one exact, canonical form so the signature always checks out.</span>
         <div class="att-layer-row">
           <div class="att-layer att-layer-3">
-            <span class="att-layer-name">subject[]</span>
-            <span class="att-layer-note">Artifact name and <code>sha256</code> digest. This is the binding.</span>
+            <span class="att-layer-name">Subject: the artifact</span>
+            <span class="att-layer-note">Its name and SHA-256 fingerprint. This is what ties the SBOM to one exact build.</span>
           </div>
           <div class="att-layer att-layer-3">
-            <span class="att-layer-name">predicate</span>
-            <span class="att-layer-note">The SBOM itself (CycloneDX, SPDX or AI-SBOM)</span>
-            <div class="att-layer att-layer-4">
-              <span class="att-layer-name">signature</span>
-              <span class="att-layer-note">Optional embedded SBOM signature, so the SBOM stays verifiable on its own</span>
+            <span class="att-layer-name">Predicate: the SBOM</span>
+            <span class="att-layer-note">Your CycloneDX, SPDX or AI-SBOM document, exactly as you sent it.</span>
+            <div class="att-layer att-layer-4 att-layer-optional">
+              <span class="att-layer-name">Extra SBOM signature <small>(optional, off by default)</small></span>
+              <span class="att-layer-note">Only needed if the SBOM must be checked on its own after it is taken out of the attestation.</span>
             </div>
           </div>
         </div>
@@ -75,15 +75,10 @@
 <!-- ============ EXPLORER ============ -->
 <section class="mb-10" id="att-explorer">
   <p class="uppercase tracking-wide text-sm text-blue-700 font-semibold">Explorer</p>
-  <h2 class="text-3xl mt-2 mb-3">Real requests and responses, annotated</h2>
+  <h2 class="text-3xl mt-2 mb-3">Real requests and responses, explained</h2>
   <p class="sans text-lg text-gray-700 max-w-3xl mb-6">These are real messages from <code>POST /api/v2/attestations/sign</code> and <code>POST /api/v2/attestations/verify</code>. Select a numbered field to see what it means and what to check.</p>
 
-  <div class="att-tabs att-noprint" role="tablist">
-    <button type="button" role="tab" class="att-tab" data-tab="sign-request">1. Sign request</button>
-    <button type="button" role="tab" class="att-tab" data-tab="sign-response">2. Sign response</button>
-    <button type="button" role="tab" class="att-tab" data-tab="verify-request">3. Verify request</button>
-    <button type="button" role="tab" class="att-tab" data-tab="verify-response">4. Verify response</button>
-  </div>
+  <div class="att-tabs att-noprint" role="tablist" id="att-tabs"></div>
   <div class="att-explorer">
     <div class="att-code-wrap">
       <div class="att-code-head">
@@ -106,43 +101,41 @@
       <p class="uppercase tracking-wide text-xs text-blue-700 font-semibold">1 &middot; Sign request</p>
       <h3 class="text-2xl mt-2 mb-3">Before you sign</h3>
       <ul>
-        <li>The <code>key_id</code> belongs to a key created with <code>key_type: "attestation"</code>. Standard signing keys are rejected with <code>key_purpose_mismatch</code>.</li>
-        <li><code>subject[].digest.sha256</code> is the digest of the <strong>artifact</strong> (an image manifest, a binary or a package), not of the SBOM. It is 64 lowercase hex characters.</li>
-        <li><code>subject[].name</code> identifies the artifact the way consumers will look it up, such as an image reference or package URL.</li>
-        <li><code>sbom</code> is a JSON object, not a string. It must not already carry a signature, and it must not contain integers above 2<sup>53</sup> or duplicate keys.</li>
-        <li>Pick <code>predicate_signature</code> on purpose: <code>embedded</code> (the CycloneDX and AI-SBOM default), <code>detached</code> (the SPDX default) or <code>none</code>.</li>
+        <li>Use a key created with <code>key_type: "attestation"</code>. A normal SBOM signing key is rejected with <code>key_purpose_mismatch</code>.</li>
+        <li>The fingerprint in <code>subject[].digest.sha256</code> is the SHA-256 of the <strong>artifact</strong> (an image, binary or package), not of the SBOM.</li>
+        <li><code>subject[].name</code> is the name people will look the artifact up by, such as an image reference.</li>
+        <li>Send <code>sbom</code> as a JSON object, not a string, and make sure it isn't already signed.</li>
+        <li>Leave out <code>predicate_signature</code> unless the SBOM must also be checkable on its own.</li>
       </ul>
     </div>
     <div class="border border-gray-200 p-5 att-check">
       <p class="uppercase tracking-wide text-xs text-blue-700 font-semibold">2 &middot; Sign response</p>
       <h3 class="text-2xl mt-2 mb-3">Before you publish</h3>
       <ul>
-        <li>Store and distribute <code>attestation</code> exactly as returned. Never re-encode or pretty-print the <code>payload</code>, because the signature covers those exact bytes.</li>
-        <li>Decode <code>payload</code> and confirm the <code>subject</code> name and digest are the artifact you meant to sign.</li>
-        <li><code>predicate_type</code> matches the SBOM format: <code>https://cyclonedx.org/bom</code>, <code>https://spdx.dev/Document</code> or <code>https://shiftleftcyber.io/attestation/ai-sbom/v1</code>.</li>
-        <li><code>signatures[0].keyid</code> equals your <code>key_id</code>, and <code>algorithm</code> is <code>ES256</code>.</li>
-        <li>Record <code>statement_sha256</code>. The verify response returns the same value, which makes audit trails easy to join.</li>
-        <li>In <code>detached</code> mode, keep the returned predicate signature with the attestation. Verifiers need it.</li>
+        <li>Store and share <code>attestation</code> exactly as returned. Re-formatting the <code>payload</code> breaks the signature.</li>
+        <li>Decode the <code>payload</code> and confirm the artifact name and fingerprint are the ones you meant to sign.</li>
+        <li><code>predicate_type</code> matches your SBOM format (CycloneDX, SPDX or AI-SBOM).</li>
+        <li><code>signatures[0].keyid</code> equals your <code>key_id</code>.</li>
+        <li>Keep <code>statement_sha256</code> with your build records. Verification returns the same value.</li>
       </ul>
     </div>
     <div class="border border-gray-200 p-5 att-check">
       <p class="uppercase tracking-wide text-xs text-blue-700 font-semibold">3 &middot; Verify request</p>
       <h3 class="text-2xl mt-2 mb-3">Before you verify</h3>
       <ul>
-        <li>Compute <code>expected_digest.sha256</code> yourself from the artifact you are about to run. <strong>Never copy it from the attestation</strong>, or the check proves nothing.</li>
-        <li>Send <code>attestation</code> as a JSON object, not as a quoted string or a wrapped field.</li>
-        <li>Use the <code>key_id</code> of the producer you expect. Verification is pinned to that key, and a different signer fails with <code>key_mismatch</code>.</li>
-        <li>For a <code>detached</code> attestation, include the producer's <code>predicate_signature</code>.</li>
+        <li>Compute <code>expected_digest.sha256</code> yourself from the artifact you are about to use. <strong>Never copy it from the attestation</strong>, or the check proves nothing.</li>
+        <li>Send <code>attestation</code> as a JSON object, not in quotes and not wrapped in another field.</li>
+        <li>Use the <code>key_id</code> of the producer you expect. A different signer fails with <code>key_mismatch</code>.</li>
       </ul>
     </div>
     <div class="border border-gray-200 p-5 att-check">
       <p class="uppercase tracking-wide text-xs text-blue-700 font-semibold">4 &middot; Verify response</p>
       <h3 class="text-2xl mt-2 mb-3">Before you trust it</h3>
       <ul>
-        <li>Gate on <code>verified: true</code>. Anything else returns an error code that names the first check that failed.</li>
-        <li><code>checks</code> reports each layer separately: <code>signature</code>, <code>payload_canonical</code>, <code>subject_match</code> and <code>predicate_signature</code>.</li>
-        <li><code>matched_subject</code> is the artifact your digest matched. Confirm the name is the one you expect.</li>
-        <li><code>key_type</code> is <code>attestation</code> and <code>predicate_type</code> is the SBOM format you expect.</li>
+        <li>Act only on <code>verified: true</code>. A failure returns an error code naming the first check that failed.</li>
+        <li><code>matched_subject</code> is the artifact your fingerprint matched. Confirm the name is the one you expect.</li>
+        <li><code>key_type</code> is <code>attestation</code>, and <code>predicate_type</code> is the SBOM format you expect.</li>
+        <li><code>checks.predicate_signature: "not_present"</code> is normal. It means no extra SBOM signature was requested.</li>
         <li><code>statement_sha256</code> equals the value from the sign response.</li>
       </ul>
     </div>
@@ -152,44 +145,44 @@
 <!-- ============ LIVE CHECK ============ -->
 <section class="mb-10" id="att-live">
   <p class="uppercase tracking-wide text-sm text-blue-700 font-semibold">Try it</p>
-  <h2 class="text-3xl mt-2 mb-3">Break the attestation and watch verification fail</h2>
-  <p class="sans text-lg text-gray-700 max-w-3xl mb-2">This runs the same checks as the API, entirely in your browser with the Web Crypto API. Nothing is uploaded. Edit the decoded payload or use a tamper button, then run the checks again.</p>
-  <p class="sans text-gray-600 max-w-3xl mb-6 att-small">If you leave the public key blank, the page uses the key embedded in the SBOM signature. That proves the data was not changed, but not who signed it. The SecureSBOM API pins verification to a registered <code>key_id</code>, which proves both.</p>
+  <h2 class="text-3xl mt-2 mb-3">Change the attestation and watch verification fail</h2>
+  <p class="sans text-lg text-gray-700 max-w-3xl mb-2">This runs the same checks as SecureSBOM, entirely in your browser. Nothing is uploaded. Edit the decoded payload or press a "change" button, then run the checks again.</p>
+  <p class="sans text-gray-600 max-w-3xl mb-6 att-small">The public key is the example producer's, published at <code>GET /api/v1/public/keys/{key_id}</code>. Checking against the producer's own key proves both that nothing changed and who signed it.</p>
 
   <div class="att-live">
     <div class="att-live-inputs">
-      <label class="att-label" for="att-envelope">Attestation (DSSE envelope JSON)</label>
+      <label class="att-label" for="att-envelope">Attestation</label>
       <textarea id="att-envelope" class="att-input att-mono" rows="7" spellcheck="false"></textarea>
 
-      <label class="att-label" for="att-payload">Decoded payload (editable; changes are re-encoded into the envelope)</label>
-      <textarea id="att-payload" class="att-input att-mono" rows="9" spellcheck="false"></textarea>
+      <label class="att-label" for="att-payload">Decoded payload (editable; your changes are written back into the attestation)</label>
+      <textarea id="att-payload" class="att-input att-mono" rows="8" spellcheck="false"></textarea>
 
-      <label class="att-label" for="att-expected">Expected artifact digest (sha256 you computed)</label>
+      <label class="att-label" for="att-expected">Your artifact's SHA-256 fingerprint</label>
       <input id="att-expected" class="att-input att-mono" type="text" spellcheck="false" autocomplete="off">
 
-      <label class="att-label" for="att-pubkey">Public key (optional, PEM or JWK)</label>
-      <textarea id="att-pubkey" class="att-input att-mono" rows="3" spellcheck="false" placeholder="Leave blank to use the key embedded in the SBOM signature"></textarea>
+      <label class="att-label" for="att-pubkey">Producer's public key (PEM or JWK)</label>
+      <textarea id="att-pubkey" class="att-input att-mono" rows="4" spellcheck="false"></textarea>
 
       <div class="flex flex-wrap gap-3 mt-4">
         <button type="button" id="att-run" class="inline-block bg-blue-600 text-white px-5 py-3 rounded hover:bg-blue-700 duration-200">Run checks</button>
         <button type="button" id="att-reset" class="inline-block border border-blue-600 text-blue-700 px-5 py-3 rounded hover:bg-blue-50 duration-200">Reset example</button>
       </div>
 
-      <p class="att-label mt-4">Tamper with it</p>
+      <p class="att-label mt-4">Change something</p>
       <div class="att-tamper">
         <button type="button" data-tamper="sbom">Change a component version in the SBOM</button>
-        <button type="button" data-tamper="subject">Point the subject at a different artifact</button>
-        <button type="button" data-tamper="pretty">Pretty-print the payload</button>
-        <button type="button" data-tamper="sig">Corrupt one byte of the signature</button>
-        <button type="button" data-tamper="digest">Verify against a different artifact digest</button>
-        <button type="button" data-tamper="ptype">Change the predicate type</button>
+        <button type="button" data-tamper="subject">Point it at a different artifact</button>
+        <button type="button" data-tamper="pretty">Re-format the payload</button>
+        <button type="button" data-tamper="sig">Corrupt the signature</button>
+        <button type="button" data-tamper="key">Use someone else's public key</button>
+        <button type="button" data-tamper="digest">Check a different artifact</button>
       </div>
     </div>
 
     <div class="att-live-results">
       <div id="att-verdict" class="att-verdict att-verdict-idle">Run the checks to see the result.</div>
       <ol id="att-results" class="att-results"></ol>
-      <p class="att-small text-gray-600 mt-4">The API stops at the first failure and returns its error code. This page runs every check so you can see each layer that broke.</p>
+      <p class="att-small text-gray-600 mt-4">SecureSBOM stops at the first failure and returns its error code. This page runs every check, so you can see everything that broke.</p>
     </div>
   </div>
 </section>
@@ -200,27 +193,46 @@
   <h2 class="text-3xl mt-2 mb-6">Verification error codes</h2>
   <div class="att-table-wrap">
     <table class="att-table">
-      <thead><tr><th>Code</th><th>What it means</th><th>What to check</th></tr></thead>
+      <thead><tr><th>Code</th><th>What it means</th><th>What to do</th></tr></thead>
       <tbody>
-        <tr><td><code>expected_digest_required</code></td><td>The request has no <code>expected_digest.sha256</code>.</td><td>Hash the artifact you are about to use and send that digest.</td></tr>
-        <tr><td><code>invalid_envelope</code></td><td>The attestation is not a well-formed DSSE envelope with the in-toto payload type.</td><td>Send the envelope as a JSON object, unchanged, with <code>payloadType</code>, <code>payload</code> and <code>signatures</code>.</td></tr>
-        <tr><td><code>key_mismatch</code></td><td>The envelope was signed by a different key than the <code>key_id</code> you asked for.</td><td>Confirm which producer key you expect, and check <code>signatures[].keyid</code>.</td></tr>
-        <tr><td><code>signature_invalid</code></td><td>The ES256 signature does not match the PAE of the payload.</td><td>The payload or signature changed after signing. Re-fetch the original attestation.</td></tr>
-        <tr><td><code>payload_not_canonical</code></td><td>The payload bytes are not RFC 8785 canonical JSON.</td><td>Something re-serialized the payload, for example by pretty-printing or reordering keys.</td></tr>
-        <tr><td><code>invalid_statement</code></td><td>The payload is not a valid in-toto Statement v1.</td><td>Check <code>_type</code>, <code>subject</code>, <code>predicateType</code> and <code>predicate</code>.</td></tr>
-        <tr><td><code>unsupported_predicate_type</code></td><td>The predicate type is not CycloneDX, SPDX or AI-SBOM.</td><td>Confirm the attestation came from a supported SBOM format.</td></tr>
-        <tr><td><code>subject_mismatch</code></td><td>No subject digest equals your expected digest.</td><td>You are verifying the wrong artifact, or the artifact changed. Do not deploy it.</td></tr>
-        <tr><td><code>predicate_signature_invalid</code></td><td>The SBOM-level (embedded or detached) signature does not verify.</td><td>The SBOM inside the statement was changed, or the wrong detached signature was supplied.</td></tr>
+        <tr><td><code>expected_digest_required</code></td><td>No artifact fingerprint was sent.</td><td>Hash the artifact you are about to use and send that SHA-256.</td></tr>
+        <tr><td><code>invalid_envelope</code></td><td>The attestation isn't in the expected format.</td><td>Send it as a JSON object, unchanged, with <code>payloadType</code>, <code>payload</code> and <code>signatures</code>.</td></tr>
+        <tr><td><code>key_mismatch</code></td><td>A different key signed it.</td><td>Check which producer you expect, and compare with <code>signatures[].keyid</code>.</td></tr>
+        <tr><td><code>signature_invalid</code></td><td>The signature doesn't match the content.</td><td>Something changed after signing. Get the original attestation again.</td></tr>
+        <tr><td><code>payload_not_canonical</code></td><td>The signed content was re-formatted.</td><td>Something re-saved it, for example by pretty-printing. Use the original.</td></tr>
+        <tr><td><code>invalid_statement</code></td><td>The statement is missing required parts.</td><td>Check <code>_type</code>, <code>subject</code>, <code>predicateType</code> and <code>predicate</code>.</td></tr>
+        <tr><td><code>unsupported_predicate_type</code></td><td>The SBOM isn't CycloneDX, SPDX or AI-SBOM.</td><td>Confirm the attestation came from a supported SBOM format.</td></tr>
+        <tr><td><code>subject_mismatch</code></td><td>Your artifact's fingerprint isn't in the attestation.</td><td>You have a different artifact from the one that was signed. Don't use it.</td></tr>
+        <tr><td><code>predicate_signature_invalid</code></td><td>The optional extra SBOM signature doesn't match.</td><td>The SBOM changed, or the wrong separate signature was sent.</td></tr>
       </tbody>
     </table>
   </div>
+</section>
+
+<!-- ============ GLOSSARY ============ -->
+<section class="mb-10" id="att-glossary">
+  <p class="uppercase tracking-wide text-sm text-blue-700 font-semibold">For the curious</p>
+  <h2 class="text-3xl mt-2 mb-4">The standards behind it</h2>
+  <p class="sans text-gray-700 max-w-3xl mb-4">You don't need these to use attestations, but they help if you are building your own verifier or reviewing the design.</p>
+  <dl class="att-glossary">
+    <dt>DSSE (Dead Simple Signing Envelope)</dt>
+    <dd>The format of the signed envelope. The signature covers the content together with its type label, so neither can be swapped for another.</dd>
+    <dt>in-toto Statement</dt>
+    <dd>A widely used format for "this data describes that artifact". The artifact is the <em>subject</em> and the SBOM is the <em>predicate</em>.</dd>
+    <dt>Canonical JSON (RFC 8785)</dt>
+    <dd>One fixed way of writing JSON (sorted keys, no extra spaces), so the same data always produces the same bytes and the same signature.</dd>
+    <dt>ES256</dt>
+    <dd>The signature algorithm: ECDSA with the P-256 curve and SHA-256.</dd>
+    <dt>SHA-256 fingerprint (digest)</dt>
+    <dd>A 64-character hash that identifies one exact file or image. Change a single byte and it changes completely.</dd>
+  </dl>
 </section>
 
 <!-- ============ CTA ============ -->
 <section class="bg-blue-50 border border-blue-200 p-6 md:p-8 mb-6 att-noprint">
   <p class="uppercase tracking-wide text-sm text-blue-800 font-semibold">Take it with you</p>
   <h2 class="text-3xl mt-2 mb-3">Get the PDF checklist</h2>
-  <p class="sans text-lg text-gray-700 max-w-3xl mb-6">Request a printable copy of this guide for your team's review process. We'll send it to you, and we can help you wire attestation signing into your pipeline.</p>
+  <p class="sans text-lg text-gray-700 max-w-3xl mb-6">Request a printable copy of this guide for your team. We'll send it to you, and we can help you add attestation signing to your pipeline.</p>
   <div class="flex flex-wrap gap-3">
     <a class="inline-block bg-blue-600 text-white px-5 py-3 rounded hover:bg-blue-700 duration-200" href="{{ $pdfHref }}">Request the PDF</a>
     <a class="inline-block border border-blue-600 text-blue-700 px-5 py-3 rounded hover:bg-blue-50 duration-200" href="/securesbom/">Explore SecureSBOM</a>
@@ -228,4 +240,7 @@
 </section>
 
 </div>
+<script type="application/json" id="att-example-data">{{ .Site.Data.attestations.example | jsonify | safeJS }}</script>
+<script type="application/json" id="att-fields-data">{{ .Site.Data.attestations.fields | jsonify | safeJS }}</script>
+<script src='{{ "js/securesbom-verify.js" | relURL }}' defer></script>
 <script src='{{ "js/attestation-guide.js" | relURL }}' defer></script>

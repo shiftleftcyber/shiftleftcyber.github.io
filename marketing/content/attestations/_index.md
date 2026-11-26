@@ -1,8 +1,8 @@
 ---
 title: "Attestations Reference Guide"
-description: "What to check on SecureSBOM attestation sign and verify requests and responses: DSSE envelopes, in-toto Statements, artifact digests, canonical JSON, and embedded SBOM signatures. Includes an in-browser verification walkthrough."
+description: "A plain-language guide to SecureSBOM attestations: what each field in the sign and verify requests and responses means, what to check, and an in-browser check you can try yourself."
 date: 2026-11-23
-lastmod: 2026-11-23
+lastmod: 2026-11-26
 layout: "single"
 keywords:
   - SBOM attestation

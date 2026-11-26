@@ -30,6 +30,8 @@ th {
 .att-layer-2 { background: #eff6ff; }
 .att-layer-3 { background: #fff; flex: 1; }
 .att-layer-4 { background: #ecfdf5; border-color: #6ee7b7; }
+.att-layer-optional { border-style: dashed; background: #f9fafb; border-color: #9ca3af; }
+.att-layer-optional .att-layer-name, .att-layer-optional .att-layer-note { color: #6b7280; }
 .att-layer-row { display: flex; gap: .75rem; flex-wrap: wrap; }
 .att-layer-name { font-weight: 600; color: #111827; }
 .att-layer-name small { font-weight: 400; color: #6b7280; }
@@ -89,9 +91,16 @@ th {
 .att-result-pass .att-result-icon { background: #059669; }
 .att-result-fail .att-result-icon { background: #dc2626; }
 .att-result-skip .att-result-icon { background: #9ca3af; }
+.att-result-info .att-result-icon { background: #3b82f6; font-style: italic; font-family: Georgia, serif; }
 .att-result-label { margin: 0; font-weight: 600; font-size: .92rem; color: #111827; }
 .att-result-fail .att-result-label { color: #991b1b; }
 .att-result-detail { margin: .15rem 0 0; font-family: 'Open Sans', sans-serif; font-size: .85rem; color: #4b5563; }
+
+/* glossary */
+.att-glossary { display: grid; grid-template-columns: minmax(12rem, 1fr) 3fr; gap: .6rem 1.5rem; border: 1px solid #e5e7eb; padding: 1.25rem; margin: 0; }
+.att-glossary dt { font-weight: 600; color: #111827; }
+.att-glossary dd { margin: 0; font-family: 'Open Sans', sans-serif; color: #374151; }
+@media (max-width: 700px) { .att-glossary { grid-template-columns: minmax(0, 1fr); } .att-glossary dd { margin-bottom: .6rem; } }
 
 /* table */
 .att-table-wrap { overflow-x: auto; border: 1px solid #e5e7eb; }
