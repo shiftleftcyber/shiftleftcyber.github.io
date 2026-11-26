@@ -1,9 +1,9 @@
 ---
 title: "SecureSBOM FAQ"
-description: "Answers to common questions about SecureSBOM, SBOM signing, verification, threat models, enterprise privacy, and trusted software supply chain evidence."
+description: "Answers to common questions about SecureSBOM, SBOM signing, SBOM attestations, verification, threat models, enterprise privacy, and trusted software supply chain evidence."
 date: 2026-09-09
 layout: "single"
-keywords: ["SecureSBOM FAQ", "SBOM signing", "SBOM verification", "software supply chain security", "CycloneDX signing", "SPDX signing", "author signature"]
+keywords: ["SecureSBOM FAQ", "SBOM signing", "SBOM verification", "software supply chain security", "CycloneDX signing", "SPDX signing", "author signature", "SBOM attestation", "in-toto attestation", "verify SBOM attestation"]
 ---
 
 A collection of common questions about how SecureSBOM works, how it integrates into your software
@@ -46,6 +46,48 @@ integrity—especially across large or modular products.
 
 With SecureSBOM, these signatures are standards-aligned, cryptographically strong, and easy to verify,
 enabling organizations to safely assemble, reuse, and distribute SBOMs at scale.
+
+{{< /faq >}}
+
+## SBOM Attestations
+
+{{< faq question="What is an SBOM attestation?" >}}
+
+An SBOM attestation is a signed statement that says **"this SBOM describes this exact artifact."** It places the SBOM
+and the SHA-256 digest of the artifact (a container image, binary, package, or other release file) inside one signed
+claim.
+
+Because the digest and the SBOM are signed together, neither can be swapped without invalidating the signature. A
+valid SBOM can no longer be presented beside the wrong release.
+
+SecureSBOM uses open standards for the format: an in-toto Statement inside a DSSE signing envelope. The
+[attestation guide](/attestations/) explains every field in plain language.
+
+{{< /faq >}}
+
+{{< faq question="Do I need a signed SBOM or an SBOM attestation?" >}}
+
+They answer different questions:
+
+* A **signed SBOM** proves the SBOM is authentic and has not changed since it was signed.
+* An **SBOM attestation** also proves the SBOM was signed for one specific artifact, identified by its digest.
+
+If consumers need to know that the SBOM belongs to the exact image or binary they are about to deploy, use an
+attestation. The attestation's signature covers every byte of the SBOM inside it, so a separate SBOM signature is
+optional. It is only needed when the SBOM must also be verified on its own after it is extracted from the attestation.
+
+{{< /faq >}}
+
+{{< faq question="How do I verify an SBOM attestation?" >}}
+
+Verification needs three things: the attestation, the producer's public key or key ID, and the SHA-256 digest of the
+artifact **you** have. Compute that digest yourself rather than copying it from the attestation.
+
+Send them to `POST /api/v2/attestations/verify`. SecureSBOM checks the signature, confirms the signed content has not
+been re-formatted, and confirms that your artifact's digest is in the attestation. The result is `verified: true`
+only when every check passes.
+
+You can [try it in your browser](/attestations/#att-live): change a signed attestation and watch each check fail.
 
 {{< /faq >}}
 

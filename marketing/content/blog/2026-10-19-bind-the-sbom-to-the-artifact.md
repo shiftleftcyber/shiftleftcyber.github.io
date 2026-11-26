@@ -5,6 +5,11 @@ description = "SecureSBOM is evolving from signing SBOM documents to signing ver
 image = "img/thirdparty/2026-10-19-bind-the-sbom-to-the-artifact.png"
 +++
 
+> **Update:** Attestation signing is now available.
+> [Attestation Signing Is Now Available](/blog/2026-11-26-attestation-signing-now-available/) covers what shipped, and the
+> [SBOM attestation guide](/attestations/) walks through every sign and verify field. You can also change a signed
+> attestation [in your browser](/attestations/#att-live) and watch verification fail.
+
 A signed Software Bill of Materials answers an important question:
 
 > **Has this SBOM changed since an authorized key signed it?**
