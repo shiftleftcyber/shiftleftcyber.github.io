@@ -1,5 +1,5 @@
 {
-  "_comment": "Plain-language notes for the annotated examples on /attestations. Paths are dotted field names; [] marks list items. Notes may contain inline HTML.",
+  "_comment": "Plain-language notes for the annotated examples on /attestations. Paths are dotted field names; [] marks list items. Note bodies are plain text with `code`, **bold** and _italic_ markers (no HTML).",
   "tabs": {
     "sign-request": {
       "label": "1. Sign request",
@@ -59,29 +59,101 @@
     "predicate": "dp-predicate"
   },
   "notes": {
-    "sq-key": { "field": "key_id", "body": "A key made for attestations (created with <code>key_type: \"attestation\"</code>). A normal SBOM signing key is turned away with <code>key_purpose_mismatch</code>, so each key has one job." },
-    "sq-subject": { "field": "subject", "body": "The artifact this SBOM describes, such as a container image, a binary or a package. <code>name</code> is how people will look it up. You can list more than one." },
-    "sq-digest": { "field": "subject[].digest.sha256", "body": "The fingerprint (SHA-256 hash) of the <strong>artifact itself</strong>, written as 64 lowercase hex characters. It is not the hash of the SBOM. This value is what ties the SBOM to one exact build." },
-    "sq-sbom": { "field": "sbom", "body": "Your SBOM as a JSON object (CycloneDX, SPDX or AI-SBOM), not as a string. It must not already be signed. SecureSBOM checks it before signing." },
-    "sq-mode": { "field": "predicate_signature", "body": "Optional. Leave it out (or send <code>none</code>) and the attestation's signature alone protects the SBOM. Ask for <code>embedded</code> or <code>detached</code> only if the SBOM must also be checkable on its own after it is taken out of the attestation." },
-    "sr-envelope": { "field": "attestation", "body": "The signed attestation. <strong>Store and share it exactly as returned.</strong> This is the file consumers will verify." },
-    "sr-payload": { "field": "attestation.payload", "body": "The signed statement, base64-encoded. Turn on <em>Show decoded payload</em> to read it. The signature covers these exact bytes, so never decode and re-encode it." },
-    "sr-sig": { "field": "attestation.signatures", "body": "<code>keyid</code> is the key that signed, and should equal your <code>key_id</code>. <code>sig</code> is the signature itself. It covers the statement and its type label together, so neither can be swapped." },
-    "sr-media": { "field": "media_type", "body": "The file type to use when you store or attach the attestation, for example next to a container image in a registry." },
-    "sr-ptype": { "field": "predicate_type", "body": "Which kind of SBOM is inside: <code>https://cyclonedx.org/bom</code>, <code>https://spdx.dev/Document</code> or <code>https://shiftleftcyber.io/attestation/ai-sbom/v1</code>." },
-    "sr-mode": { "field": "predicate_signature", "body": "Whether the SBOM got an extra signature of its own. <code>none</code> (the default) means it didn't, and the attestation signature covers it." },
-    "sr-sha": { "field": "statement_sha256", "body": "A fingerprint of the signed statement. Keep it with your build records. The verify response returns the same value, so it links the two." },
-    "dp-type": { "field": "_type", "body": "Says this is an in-toto statement: a widely used format for \"this data describes that artifact\"." },
-    "dp-subject": { "field": "subject", "body": "The artifact name and fingerprint you signed. Check it is the artifact you meant <em>before</em> you publish." },
-    "dp-ptype": { "field": "predicateType", "body": "Which kind of SBOM the statement carries." },
-    "dp-predicate": { "field": "predicate", "body": "Your SBOM, exactly as you sent it, with keys sorted into a fixed order." },
-    "vq-key": { "field": "key_id", "body": "The key you expect the producer to have signed with. If someone else signed it, verification fails with <code>key_mismatch</code>." },
-    "vq-att": { "field": "attestation", "body": "The attestation as a JSON object, unchanged. Don't wrap it in quotes or in another field." },
-    "vq-digest": { "field": "expected_digest", "body": "Required. The fingerprint <strong>you computed</strong> from the artifact you are about to use. Never copy it out of the attestation, or the check proves nothing." },
-    "vr-verified": { "field": "verified", "body": "Base your decision on this. <code>true</code> means every check passed. A failure returns an error code instead (see the table below)." },
-    "vr-keytype": { "field": "key_type", "body": "<code>attestation</code> confirms a dedicated attestation key signed it." },
-    "vr-matched": { "field": "matched_subject", "body": "The artifact your fingerprint matched. Make sure the name is the one you expect." },
-    "vr-checks": { "field": "checks", "body": "Each check on its own: the signature, the signed content's exact form, the artifact match, and the optional extra SBOM signature. <code>not_present</code> is normal when no extra SBOM signature was requested." },
-    "vr-sha": { "field": "statement_sha256", "body": "Matches the value from the sign response, which shows it is the same statement the producer signed." }
+    "sq-key": {
+      "field": "key_id",
+      "body": "A key made for attestations (created with `key_type: \"attestation\"`). A normal SBOM signing key is turned away with `key_purpose_mismatch`, so each key has one job."
+    },
+    "sq-subject": {
+      "field": "subject",
+      "body": "The artifact this SBOM describes, such as a container image, a binary or a package. `name` is how people will look it up. You can list more than one."
+    },
+    "sq-digest": {
+      "field": "subject[].digest.sha256",
+      "body": "The fingerprint (SHA-256 hash) of the **artifact itself**, written as 64 lowercase hex characters. It is not the hash of the SBOM. This value is what ties the SBOM to one exact build."
+    },
+    "sq-sbom": {
+      "field": "sbom",
+      "body": "Your SBOM as a JSON object (CycloneDX, SPDX or AI-SBOM), not as a string. It must not already be signed. SecureSBOM checks it before signing."
+    },
+    "sq-mode": {
+      "field": "predicate_signature",
+      "body": "Optional. Leave it out (or send `none`) and the attestation's signature alone protects the SBOM. Ask for `embedded` or `detached` only if the SBOM must also be checkable on its own after it is taken out of the attestation."
+    },
+    "sr-envelope": {
+      "field": "attestation",
+      "body": "The signed attestation. **Store and share it exactly as returned.** This is the file consumers will verify."
+    },
+    "sr-payload": {
+      "field": "attestation.payload",
+      "body": "The signed statement, base64-encoded. Turn on _Show decoded payload_ to read it. The signature covers these exact bytes, so never decode and re-encode it."
+    },
+    "sr-sig": {
+      "field": "attestation.signatures",
+      "body": "`keyid` is the key that signed, and should equal your `key_id`. `sig` is the signature itself. It covers the statement and its type label together, so neither can be swapped."
+    },
+    "sr-media": {
+      "field": "media_type",
+      "body": "The file type to use when you store or attach the attestation, for example next to a container image in a registry."
+    },
+    "sr-ptype": {
+      "field": "predicate_type",
+      "body": "Which kind of SBOM is inside: `https://cyclonedx.org/bom`, `https://spdx.dev/Document` or `https://shiftleftcyber.io/attestation/ai-sbom/v1`."
+    },
+    "sr-mode": {
+      "field": "predicate_signature",
+      "body": "Whether the SBOM got an extra signature of its own. `none` (the default) means it didn't, and the attestation signature covers it."
+    },
+    "sr-sha": {
+      "field": "statement_sha256",
+      "body": "A fingerprint of the signed statement. Keep it with your build records. The verify response returns the same value, so it links the two."
+    },
+    "dp-type": {
+      "field": "_type",
+      "body": "Says this is an in-toto statement: a widely used format for \"this data describes that artifact\"."
+    },
+    "dp-subject": {
+      "field": "subject",
+      "body": "The artifact name and fingerprint you signed. Check it is the artifact you meant _before_ you publish."
+    },
+    "dp-ptype": {
+      "field": "predicateType",
+      "body": "Which kind of SBOM the statement carries."
+    },
+    "dp-predicate": {
+      "field": "predicate",
+      "body": "Your SBOM, exactly as you sent it, with keys sorted into a fixed order."
+    },
+    "vq-key": {
+      "field": "key_id",
+      "body": "The key you expect the producer to have signed with. If someone else signed it, verification fails with `key_mismatch`."
+    },
+    "vq-att": {
+      "field": "attestation",
+      "body": "The attestation as a JSON object, unchanged. Don't wrap it in quotes or in another field."
+    },
+    "vq-digest": {
+      "field": "expected_digest",
+      "body": "Required. The fingerprint **you computed** from the artifact you are about to use. Never copy it out of the attestation, or the check proves nothing."
+    },
+    "vr-verified": {
+      "field": "verified",
+      "body": "Base your decision on this. `true` means every check passed. A failure returns an error code instead (see the table below)."
+    },
+    "vr-keytype": {
+      "field": "key_type",
+      "body": "`attestation` confirms a dedicated attestation key signed it."
+    },
+    "vr-matched": {
+      "field": "matched_subject",
+      "body": "The artifact your fingerprint matched. Make sure the name is the one you expect."
+    },
+    "vr-checks": {
+      "field": "checks",
+      "body": "Each check on its own: the signature, the signed content's exact form, the artifact match, and the optional extra SBOM signature. `not_present` is normal when no extra SBOM signature was requested."
+    },
+    "vr-sha": {
+      "field": "statement_sha256",
+      "body": "Matches the value from the sign response, which shows it is the same statement the producer signed."
+    }
   }
 }

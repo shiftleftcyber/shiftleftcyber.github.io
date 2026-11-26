@@ -12,9 +12,31 @@
 
   function $(id) { return document.getElementById(id); }
   function readJSON(id) { var el = $(id); return el ? JSON.parse(el.textContent) : null; }
-  function esc(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+  /* All rendering builds DOM nodes; no data or user input is ever parsed as HTML. */
+  function el(tag, attrs, children) {
+    var node = document.createElement(tag);
+    Object.keys(attrs || {}).forEach(function (k) {
+      if (k === "className") node.className = attrs[k];
+      else node.setAttribute(k, attrs[k]);
+    });
+    (children || []).forEach(function (c) {
+      if (c == null) return;
+      node.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
+    });
+    return node;
+  }
+  function replaceChildren(node, children) {
+    while (node.firstChild) node.removeChild(node.firstChild);
+    (children || []).forEach(function (c) { if (c != null) node.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+  }
+  /* Note text supports `code`, **bold** and _italic_ markers only. */
+  function inline(text) {
+    var parts = String(text).split(/(`[^`]+`|\*\*[^*]+\*\*|_[^_\s][^_]*_)/);
+    return parts.filter(function (p) { return p !== ""; }).map(function (p) {
+      if (p.charAt(0) === "`") return el("code", {}, [p.slice(1, -1)]);
+      if (p.slice(0, 2) === "**") return el("strong", {}, [p.slice(2, -2)]);
+      if (p.charAt(0) === "_" && p.length > 2) return el("em", {}, [p.slice(1, -1)]);
+      return p;
     });
   }
 
@@ -26,36 +48,53 @@
 
   function truncate(s) { return s.length <= 64 ? s : s.slice(0, 36) + "…" + s.slice(-10); }
 
-  function renderJSON(value, path, indent, notes, numbers) {
+  /* Renders a JSON value as pretty-printed DOM nodes, turning annotated keys
+   * into numbered buttons. Appends to `out` (an array of nodes/strings). */
+  function renderJSON(value, path, indent, notes, numbers, out) {
     var pad = "  ".repeat(indent);
     if (value && typeof value === "object" && value.__decoded) {
-      return '<span class="att-decoded-tag">/* decoded from base64 */</span> ' + renderJSON(value.value, path, indent, notes, numbers);
+      out.push(el("span", { className: "att-decoded-tag" }, ["/* decoded from base64 */"]), " ");
+      return renderJSON(value.value, path, indent, notes, numbers, out);
     }
     if (Array.isArray(value)) {
-      if (!value.length) return "[]";
-      return "[\n" + value.map(function (item) {
-        return pad + "  " + renderJSON(item, path + "[]", indent + 1, notes, numbers);
-      }).join(",\n") + "\n" + pad + "]";
+      if (!value.length) { out.push("[]"); return; }
+      out.push("[\n");
+      value.forEach(function (item, i) {
+        out.push(pad + "  ");
+        renderJSON(item, path + "[]", indent + 1, notes, numbers, out);
+        out.push(i < value.length - 1 ? ",\n" : "\n");
+      });
+      out.push(pad + "]");
+      return;
     }
     if (value && typeof value === "object") {
       var keys = Object.keys(value);
-      if (!keys.length) return "{}";
-      return "{\n" + keys.map(function (k) {
+      if (!keys.length) { out.push("{}"); return; }
+      out.push("{\n");
+      keys.forEach(function (k, i) {
         var p = path ? path + "." + k : k;
-        var keyHtml = '<span class="att-k">"' + esc(k) + '"</span>';
+        var keyNode = el("span", { className: "att-k" }, ['"' + k + '"']);
         if (notes[p]) {
-          if (!numbers[notes[p]]) numbers[notes[p]] = Object.keys(numbers).length + 1;
-          keyHtml = '<button type="button" class="att-key" data-note="' + notes[p] + '"><span class="att-badge">' +
-            numbers[notes[p]] + "</span>" + keyHtml + "</button>";
+          var id = notes[p];
+          if (!numbers[id]) numbers[id] = Object.keys(numbers).length + 1;
+          keyNode = el("button", { type: "button", className: "att-key", "data-note": id },
+            [el("span", { className: "att-badge" }, [String(numbers[id])]), keyNode]);
         }
-        return pad + "  " + keyHtml + ": " + renderJSON(value[k], p, indent + 1, notes, numbers);
-      }).join(",\n") + "\n" + pad + "}";
+        out.push(pad + "  ", keyNode, ": ");
+        renderJSON(value[k], p, indent + 1, notes, numbers, out);
+        out.push(i < keys.length - 1 ? ",\n" : "\n");
+      });
+      out.push(pad + "}");
+      return;
     }
     if (typeof value === "string") {
       var t = truncate(value);
-      return '<span class="att-s"' + (t !== value ? ' title="' + esc(value) + '"' : "") + '>"' + esc(t) + '"</span>';
+      var attrs = { className: "att-s" };
+      if (t !== value) attrs.title = value;
+      out.push(el("span", attrs, ['"' + t + '"']));
+      return;
     }
-    return '<span class="att-n">' + esc(JSON.stringify(value)) + "</span>";
+    out.push(el("span", { className: "att-n" }, [JSON.stringify(value)]));
   }
 
   function setTab(name) {
@@ -83,14 +122,20 @@
       });
     }
     // Number the fields in the order they appear in the rendered JSON.
-    var numbers = {};
-    $("att-code").innerHTML = renderJSON(obj, "", 0, notes, numbers);
+    var numbers = {}, nodes = [];
+    renderJSON(obj, "", 0, notes, numbers, nodes);
+    replaceChildren($("att-code"), nodes);
     var order = Object.keys(numbers).sort(function (a, b) { return numbers[a] - numbers[b]; });
-    $("att-notes").innerHTML = order.map(function (id) {
+    replaceChildren($("att-notes"), order.map(function (id) {
       var n = FIELDS.notes[id];
-      return '<div class="att-note" data-note="' + id + '" tabindex="0"><span class="att-badge">' + numbers[id] + "</span>" +
-        '<div><p class="att-note-title"><code>' + esc(n.field) + '</code></p><p class="att-note-body">' + n.body + "</p></div></div>";
-    }).join("");
+      return el("div", { className: "att-note", "data-note": id, tabindex: "0" }, [
+        el("span", { className: "att-badge" }, [String(numbers[id])]),
+        el("div", {}, [
+          el("p", { className: "att-note-title" }, [el("code", {}, [n.field])]),
+          el("p", { className: "att-note-body" }, inline(n.body))
+        ])
+      ]);
+    }));
   }
 
   function highlight(id, scrollNote) {
@@ -200,21 +245,25 @@
       expectedDigest: $("att-expected").value,
       publicKey: $("att-pubkey").value.trim() || null
     });
-    list.innerHTML = res.checks.filter(function (c) { return c.id !== "key"; }).map(function (c) {
-      return '<li class="att-result att-result-' + c.status + '"><span class="att-result-icon">' + ICONS[c.status] + "</span><div>" +
-        '<p class="att-result-label">' + esc(c.label) + (c.status === "fail" ? " <code>" + c.code + "</code>" : "") + "</p>" +
-        '<p class="att-result-detail">' + esc(c.detail) + "</p></div></li>";
-    }).join("");
-    var sha = res.statementSha256 ? '<span class="att-sha">statement_sha256 ' + res.statementSha256 + "</span>" : "";
+    replaceChildren(list, res.checks.filter(function (c) { return c.id !== "key"; }).map(function (c) {
+      return el("li", { className: "att-result att-result-" + c.status }, [
+        el("span", { className: "att-result-icon" }, [ICONS[c.status]]),
+        el("div", {}, [
+          el("p", { className: "att-result-label" }, [c.label, c.status === "fail" ? " " : null, c.status === "fail" ? el("code", {}, [c.code]) : null]),
+          el("p", { className: "att-result-detail" }, [c.detail])
+        ])
+      ]);
+    }));
+    var sha = res.statementSha256 ? el("span", { className: "att-sha" }, ["statement_sha256 " + res.statementSha256]) : null;
     if (res.code) {
       verdict.className = "att-verdict att-verdict-fail";
-      verdict.innerHTML = "<strong>Not verified.</strong> The API would return <code>" + res.code + "</code>" + sha;
+      replaceChildren(verdict, [el("strong", {}, ["Not verified."]), " The API would return ", el("code", {}, [res.code]), sha]);
     } else if (!res.verified) {
       verdict.className = "att-verdict att-verdict-idle";
-      verdict.innerHTML = "<strong>Not enough to decide.</strong> Add the missing input shown below." + sha;
+      replaceChildren(verdict, [el("strong", {}, ["Not enough to decide."]), " Add the missing input shown below.", sha]);
     } else {
       verdict.className = "att-verdict att-verdict-pass";
-      verdict.innerHTML = "<strong>Verified.</strong> Every check passed." + sha;
+      replaceChildren(verdict, [el("strong", {}, ["Verified."]), " Every check passed.", sha]);
     }
   }
 
@@ -224,9 +273,9 @@
     EXAMPLE = readJSON("att-example-data");
     FIELDS = readJSON("att-fields-data");
 
-    $("att-tabs").innerHTML = TAB_ORDER.map(function (k) {
-      return '<button type="button" role="tab" class="att-tab" data-tab="' + k + '">' + esc(FIELDS.tabs[k].label) + "</button>";
-    }).join("");
+    replaceChildren($("att-tabs"), TAB_ORDER.map(function (k) {
+      return el("button", { type: "button", role: "tab", className: "att-tab", "data-tab": k }, [FIELDS.tabs[k].label]);
+    }));
     document.querySelectorAll(".att-tab").forEach(function (b) {
       b.addEventListener("click", function () { setTab(b.getAttribute("data-tab")); });
     });
