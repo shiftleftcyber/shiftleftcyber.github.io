@@ -1,0 +1,23 @@
+# ShiftLeftCyber
+
+> ShiftLeftCyber builds SecureSBOM, a platform for signing and verifying Software Bills of Materials (SBOMs) and artifact-bound SBOM attestations. It provides managed signing keys, CycloneDX, SPDX and AI-BOM support, online and offline verification, and APIs and CI/CD integrations.
+
+## SecureSBOM
+
+- [SecureSBOM](https://shiftleftcyber.io/securesbom/): SBOM signing and verification platform for software supply chain security.
+- [SBOM Attestations: How to Sign and Verify](https://shiftleftcyber.io/attestations/): Plain-language reference for the attestation sign and verify APIs, with field-by-field explanations, checklists, error codes, and an in-browser verification demo.
+- [SLSA and SecureSBOM](https://shiftleftcyber.io/securesbom/slsa-and-securesbom/): How build provenance and SBOM signing complement each other.
+- [Sigstore comparison](https://shiftleftcyber.io/securesbom/sigstore-comparison/): How SecureSBOM differs from Sigstore for SBOM signing.
+- [FAQ](https://shiftleftcyber.io/faq/): Common questions about SBOM signing, attestations, verification, and threat models.
+
+## Blog
+
+- [Attestation Signing Is Now Available](https://shiftleftcyber.io/blog/2026-11-26-attestation-signing-now-available/): What shipped and how to try it.
+- [Introducing Attestation Signing](https://shiftleftcyber.io/blog/2026-10-19-bind-the-sbom-to-the-artifact/): Why an SBOM must be bound to the artifact it describes.
+- [All posts](https://shiftleftcyber.io/blog/)
+
+## Optional
+
+- [About](https://shiftleftcyber.io/about/)
+- [Contact](https://shiftleftcyber.io/contactus/)
+- [SecureSBOM app](https://app.securesbom.com/)
