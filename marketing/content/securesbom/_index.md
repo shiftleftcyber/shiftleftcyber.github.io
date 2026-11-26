@@ -55,6 +55,7 @@ SecureSBOM focuses on the trust layer around SBOMs:
 - Managed key infrastructure so teams do not have to operate their own PKI
 - Online and offline verification for CI/CD, vendor review, clean-room, and air-gapped workflows
 - Audit evidence for security reviews, customer requests, and compliance programs
+- Artifact-bound attestations that prove an SBOM belongs to the exact container image, binary, or package being deployed
 
 <section class="not-prose bg-blue-50 border border-blue-200 p-6 md:p-8 my-10">
   <p class="uppercase tracking-wide text-sm text-blue-800 font-semibold">2026 SBOM minimum elements</p>
@@ -86,6 +87,17 @@ SecureSBOM focuses on the trust layer around SBOMs:
     </ol>
   </section>
 </div>
+
+<section class="not-prose bg-blue-50 border border-blue-200 p-6 md:p-8 my-10">
+  <p class="uppercase tracking-wide text-sm text-blue-800 font-semibold">Now available: attestation signing</p>
+  <h2 class="text-3xl mt-2 mb-3">Prove the SBOM belongs to the artifact.</h2>
+  <p class="sans text-gray-800 mb-4">A signed SBOM proves the document has not changed. An SBOM attestation goes further: it signs the SBOM together with the SHA-256 digest of the exact artifact it describes. Verification checks the signature and confirms the artifact in hand is the one that was signed.</p>
+  <p class="sans text-gray-800 mb-6">See every field of the sign and verify requests explained, then change an attestation in your browser and watch verification fail.</p>
+  <div class="flex flex-wrap gap-3">
+    <a class="inline-block bg-blue-600 text-white px-5 py-3 rounded hover:bg-blue-700 duration-200" href="/attestations/">Read the attestation guide</a>
+    <a class="inline-block border border-blue-600 text-blue-700 px-5 py-3 rounded hover:bg-blue-50 duration-200" href="/attestations/#att-live">Try it in your browser</a>
+  </div>
+</section>
 
 ## Built For Real Supply Chain Workflows
 
@@ -125,6 +137,10 @@ SBOM Author Signature is metadata that helps verify who authored an SBOM and whe
 ### Why sign an SBOM?
 
 Signing turns an SBOM from an inventory claim into evidence that can be verified before it is used for vulnerability management, procurement, compliance, or incident response.
+
+### What is an SBOM attestation?
+
+An SBOM attestation is a signed statement that binds an SBOM to the SHA-256 digest of the artifact it describes. Verifiers check the signature and that the digest matches the artifact they have. See the [attestation guide](/attestations/) for a walkthrough.
 
 ### How does SecureSBOM support the 2026 SBOM minimum elements?
 
